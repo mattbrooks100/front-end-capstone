@@ -19,28 +19,29 @@ const carousel = () => {
     speed: 500,
     slidesToShow: 1,
     SlidesToScroll: 1,
-    // variableWidth: true,
+    adaptiveHeight: true
   };
   return (
     <div>
+      <h2>Complete the look</h2>
         <Slider {...settings}>
             <div>
-                <img style={{width: 500}} src={photo1}></img>
+                <img style={{width: 500, border: '2px solid black'}} src={photo1}></img>
             </div>
             <div>
-            <img style={{width: 500}} src={photo2}></img>
+            <img style={{width: 500, border: '2px solid black'}} src={photo2}></img>
             </div>
             <div>
-            <img style={{width: 500}} src={photo3}></img>
+            <img style={{width: 500, border: '2px solid black'}} src={photo3}></img>
             </div>
             <div>
-            <img style={{width: 500}} src={photo4}></img>
+            <img style={{width: 500, border: '2px solid black'}} src={photo4}></img>
             </div>
             <div>
-            <img style={{width: 500}} src={photo5}></img>
+            <img style={{width: 500, border: '2px solid black'}} src={photo5}></img>
             </div>
             <div>
-            <img style={{width: 500}} src={photo6}></img>
+            <img style={{width: 500, border: '2px solid black'}} src={photo6}></img>
             </div>
         </Slider>
     </div>

@@ -7,7 +7,7 @@ const ProductOptions = () => {
 
   return (
     <div>
-      <h1 className="product-option heading">{shoe.name}</h1>
+      <h1 className="">{shoe.name}</h1>
       <h2 className="product-option subheading">{shoe.category}</h2>
     </div>
   );

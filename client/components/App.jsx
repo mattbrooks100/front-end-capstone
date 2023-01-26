@@ -1,6 +1,6 @@
 import React from "react";
 import { RecoilRoot } from "recoil";
-import Carousel from "./Carousel";
+// import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions.jsx";
 
 const App = () => {

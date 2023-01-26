@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import PhotoImages from "./Photoimages";
+
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,6 +22,8 @@ const App = () => {
           {task.description}
         </span>
       ))}
+      <PhotoImages />
+
     </main>
   );
 };

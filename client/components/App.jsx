@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "./Carousel";
+import Info from "./info";
+import Explore from "./Explore";
 
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
         </span>
       ))}
       <Carousel />
+      <Info/>
+      <Explore />
     </main>
   );
 };

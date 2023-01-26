@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Carousel from "./Carousel";
+
 
 const App = () => {
   const [shoes, setShoes] = useState([]);
@@ -14,12 +16,14 @@ const App = () => {
   }, []);
 
   return (
+    
     <main>
       {shoes.map((shoe) => (
         <span className="task" key={shoe.id}>
           {shoe.name}
         </span>
       ))}
+      <Carousel />
     </main>
   );
 };

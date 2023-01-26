@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/tasks", {
+    fetch("http://localhost:3000/api/shoes", {
       mode: "cors",
     })
       .then((res) => res.json())
-      .then((tasks) => {
-        setTasks(tasks);
+      .then((shoes) => {
+        setShoes(shoes);
       });
   }, []);
 
   return (
     <main>
-      {tasks.map((task) => (
-        <span className="task" key={task.id}>
-          {task.description}
+      {shoes.map((shoe) => (
+        <span className="task" key={shoe.id}>
+          {shoe.name}
         </span>
       ))}
     </main>

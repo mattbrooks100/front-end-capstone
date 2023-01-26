@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import postgres from "postgres";
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
-// dotenv.config();
+dotenv.config();
 
 const sql = postgres(process.env.DATABASE_URL);
 

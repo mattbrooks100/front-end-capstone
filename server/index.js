@@ -12,8 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/tasks", (req, res) => {
-  sql`SELECT * FROM tasks`.then((rows) => {
+app.get("/api/shoes", (req, res) => {
+  sql`SELECT * FROM shoes`.then((rows) => {
     res.send(rows);
   });
 });

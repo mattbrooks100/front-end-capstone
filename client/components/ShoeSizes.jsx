@@ -7,13 +7,13 @@ const ShoeSizes = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
 
   return (
-    <div className="grid grid-cols-2 gap-1 w-96 justify-between">
+    <div className="grid grid-cols-2 gap-1 justify-between">
       <h2 className="font-[500] tracking-[0.02em]">Select Size</h2>
       <a href="#" className="flex justify-end font-[500] tracking-[0.02em] text-gray-500">
         Size Guide
       </a>
       {shoe.sizes.map((size) => (
-        <Size size={size}/>
+        <Size key={size} size={size} />
       ))}
     </div>
   );

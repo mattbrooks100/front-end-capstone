@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const sql = postgres({database: "tasktime"});
+const sql = postgres(process.env.DATABASE_URL);
 
 const app = express();
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { RecoilRoot } from "recoil";
 import Carousel from "./Carousel";
-import ProductOptions from "./ProductOptions.jsx";
+import ProductOptions from "./ProductOptions/ProductOptions.jsx";
+import Footer from "./Footer/Footer";
 
 const App = () => {
   // useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
     <RecoilRoot>
       <ProductOptions />
       <Carousel />
+      <Footer />
     </RecoilRoot>
   );
 };

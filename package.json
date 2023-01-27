@@ -16,6 +16,8 @@
     "concurrently": "^7.1.0"
   },
   "dependencies": {
+    "react-icons": "^4.7.1",
+    "recoil": "^0.7.6",
     "slick-carousel": "^1.8.1"
   }
 }

@@ -1,33 +1,46 @@
 import React from "react";
+import Link from "./Link";
 
 const MenuLinks = () => {
+  const leftList = [
+    "GIFT CARDS",
+    "PROMOTIONS",
+    "FIND A STORE",
+    "SIGN UP FOR EMAIL",
+    "BECOME A MEMBER",
+    "NIKE JOURNAL",
+    "SEND US FEEDBACK",
+  ];
+
+  const centerList = [
+    "Order Status",
+    "Shipping and Delivery",
+    "Returns",
+    "Payment Options",
+    "Gift Card Balance",
+    "Contact Us",
+  ];
+
+  const rightList = ["News", "Careers", "Investors", "Purpose", "Sustainability"];
+
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-3 max-w-[700px] w-3/4">
       <div className="flex flex-col my-10 gap-y-4 text-xs font-semibold">
-        <a>GIFT CARDS</a>
-        <a>PROMOTIONS</a>
-        <a>FIND A STORE</a>
-        <a>SIGN UP FOR EMAIL</a>
-        <a>BECOME A MEMBER</a>
-        <a>NIKE JOURNAL</a>
-        <a>SEND US FEEDBACK</a>
+        {leftList.map((link) => (
+          <Link key={link} link={link} />
+        ))}
       </div>
       <div className="flex flex-col my-10 gap-y-4 text-xs text-gray-500">
-        <a className="text-white">GET HELP</a>
-        <a>Order Status</a>
-        <a>Shipping and Delivery</a>
-        <a>Returns</a>
-        <a>Payment Options</a>
-        <a>Gift Card Balance</a>
-        <a>Contact Us</a>
+        <a href="#" className="text-white">GET HELP</a>
+        {centerList.map((link) => (
+          <Link key={link} link={link} />
+        ))}
       </div>
       <div className="flex flex-col my-10 gap-y-4 text-xs text-gray-500">
-        <a className="text-white">ABOUT NIKE</a>
-        <a>News</a>
-        <a>Careers</a>
-        <a>Investors</a>
-        <a>Purpose</a>
-        <a>Sustainability</a>
+        <a href="#" className="text-white">ABOUT NIKE</a>
+        {rightList.map((link) => (
+          <Link key={link} link={link} />
+        ))}
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const Footer = () => {
         <MenuLinks />
         <SocialMedia />
       </div>
-      <div className="flex w-3/4 justify-between">
+      <div className="flex w-3/4">
         <SubFooter />
       </div>
     </div>

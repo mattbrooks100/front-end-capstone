@@ -31,13 +31,17 @@ const MenuLinks = () => {
         ))}
       </div>
       <div className="flex flex-col my-10 gap-y-4 text-xs text-gray-500">
-        <a href="#" className="text-white">GET HELP</a>
+        <a href="#" className="text-white font-semibold">
+          GET HELP
+        </a>
         {centerList.map((link) => (
           <Link key={link} link={link} />
         ))}
       </div>
       <div className="flex flex-col my-10 gap-y-4 text-xs text-gray-500">
-        <a href="#" className="text-white">ABOUT NIKE</a>
+        <a href="#" className="text-white font-semibold">
+          ABOUT NIKE
+        </a>
         {rightList.map((link) => (
           <Link key={link} link={link} />
         ))}

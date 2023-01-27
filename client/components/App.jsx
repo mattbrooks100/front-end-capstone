@@ -3,6 +3,9 @@ import { RecoilRoot } from "recoil";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
+import Info from "./info";
+import Explore from "./Explore";
+
 
 const App = () => {
   // useEffect(() => {
@@ -19,6 +22,8 @@ const App = () => {
     <RecoilRoot>
       <ProductOptions />
       <Carousel />
+      <Info/>
+      <Explore />
       <Footer />
     </RecoilRoot>
   );

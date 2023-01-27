@@ -12,31 +12,33 @@ import Dunks6 from "/photoImages/Dunks6.webp";
 
 const PhotoImages = () => {
     return (
-        <div class="grid grid-cols-2 gap-2">
-            <div>
-            <img src={Dunks1}></img>
+        <div class="grid grid-cols-2 gap-4">
+                <div>
+                <img src={Dunks1}></img>
+                </div>
+                <div>  
+                <img src={JersenDunks}></img>
+                </div>
+                <div>  
+                <img src={Dunks2}></img>
+                </div>
+                <div>
+                <img src={Dunks3}></img>
+                </div>
+                <div>
+                <img src={Dunks4}></img>
+                </div>
+                <div>
+                <img src={Dunks5}></img>
+                </div>
+                <div>
+                <img src={Dunks6}></img>
+                </div>
+                <div>
+                <img src={Dunks6}></img>
+                </div>
             </div>
-            <div>  
-            <img src={JersenDunks}></img>
-            </div>
-            <div>  
-            <img src={Dunks2}></img>
-            </div>
-            <div>
-            <img src={Dunks3}></img>
-            </div>
-            <div>
-            <img src={Dunks4}></img>
-            </div>
-            <div>
-            <img src={Dunks5}></img>
-            </div>
-            <div>
-            <img src={Dunks6}></img>
-            </div>
-        </div>
     
-        
     )
 }
 

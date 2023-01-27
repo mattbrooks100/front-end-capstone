@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
 }
@@ -21,4 +26,5 @@ body {
 .task > * + * {
   margin-left: 4px;
 }
+
 

@@ -31,7 +31,7 @@ const carousel = () => {
   // used built in react-slick Slider tag to create carousel effect
   return (
     <div>
-      <h2>Complete the look</h2>
+      <h2 className='text-2xl mb-8'>Complete the Look</h2>
         <Slider {...settings}>
             <div>
                 <img style={{width: 500, height:'500px', objectFit: 'contain'}} src={photo1}></img>

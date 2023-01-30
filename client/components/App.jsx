@@ -4,7 +4,7 @@ import ProductPhotos from "./ProductPhotos";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
-import Info from "./info";
+import Info from "./Info";
 import Explore from "./Explore";
 
 const App = () => {

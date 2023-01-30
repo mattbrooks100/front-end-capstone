@@ -1,23 +1,114 @@
-body {
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.HeaderBackground{
+  background-color: whitesmoke;
+  display: flex;
+  padding:3px;
+  border: solid;
+ justify-content: space-between;
+ border: solid;
+ height: 50px;
 }
 
-.main {
-  padding: 8px;
+.HeaderLogos{
+  display: flex;
+  padding-left: 20px;
+  
+}
+.jordan{
+  width: 28px;
+  height: 28px;
+  padding-top:.5vmin;
+  margin-left: 5.1vmin;
 }
 
-.task {
+.converse{
+  object-fit: contain;
+  width: 45px;
+  padding-top:.5vmin;
+  margin-left: 5.1vmin;
+}
+.HeaderRight{
+  display: flex;
+  flex-direction: row;
+  margin-right: 22px;
+  justify-content: space-between;
+}
+
+.navBar{
+  display:flex;
+  /* background-color: orange; */
+  margin-left: 24PX;
+  align-items: center;
+}
+.NikeLogo{
+  width: 80px;
+  height: 80px;
+  display: flex;
+}
+
+.tabsContainer{
+ display: flex;
+ 
+ margin-left: 10px;
+}
+
+
+.header-tab{
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  height: 70px;
+  transform: translate(650px);
+} 
+
+.header-tab-active{
+  text-decoration: underline;
+  font-size: 18px;
+  
+}
+.header-tab:hover{
+  text-decoration: underline;
+}
+
+.searchbar{
+  position: relative;
+  display: block;
+  float: right;
+  padding-top: 15px;
+ transform: translate(900px);
+ display: flex;
+ padding-left: 110px;
+}
+
+.magnifier{
+  position: absolute;
+  left: 110px;
+  top: 15px;
+  font-size: 20px;
+  height: 40px;
+  width: 30px;
   display: flex;
   align-items: center;
-  border: 1px solid black;
-  padding: 2px;
-  max-width: 200px;
+  justify-content: center;
 }
 
-.task + .task {
-  margin-top: 4px;
+.input{
+  border-radius: 22px;
+  opacity:45%;
+  background-color: whitesmoke;
+  border: none;
+  height: 40px;
 }
 
-.task > * + * {
-  margin-left: 4px;
+.heart{
+  padding-top: 20px;
+  padding-left: 15px;
+  transform: translate(900px, 10px);
+
+
 }

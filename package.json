@@ -13,6 +13,12 @@
     "db:seed": "psql -f server/migration.sql tasktime"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0"
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.1.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "react-icons": "^4.7.1"
   }
 }

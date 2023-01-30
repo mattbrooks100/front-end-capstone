@@ -1,6 +1,6 @@
 import React from "react";
 import Reviews from "./reviews.jsx";
-
+import { ViewDetails } from "./viewDetails.jsx";
 
 const Info = (props) => {
     let count = 3
@@ -16,10 +16,8 @@ const Info = (props) => {
                 <li>Shown: Tan/White</li>
                 <li>Style: Drippy</li>
             </ul>
-
-            
+            <ViewDetails />
             <Reviews />
-            
         </div>
     )
 }

@@ -2,8 +2,7 @@ import React from "react";
 import Reviews from "./Reviews.jsx";
 import FreeShipping from "./FreeShipping.jsx";
 
-const Info = (props) => {
-  let count = 3;
+const Info = () => {
 
   return (
     <div className="container mt-14 font-sans">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 
 const FreeShipping = () => {
-  const [shipShow, setShipShow] = useState(true);
+  const [shipShow, setShipShow] = useState(false);
 
   return (
     <div className="py-8 border-b border-gray-200">

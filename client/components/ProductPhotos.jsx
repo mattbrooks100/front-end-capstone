@@ -1,6 +1,6 @@
 import React from "react";
 import Dunks1 from "../photos/Dunks1.jpg";
-import JersenDunks from "../photos/jersendunks.gif";
+import JersenDunks from "../photos/jersendunks_v2.gif";
 import Dunks2 from "../photos/Dunks2.jpg";
 import Dunks3 from "../photos/Dunks3.jpg";
 import Dunks4 from "../photos/Dunks4.jpg";

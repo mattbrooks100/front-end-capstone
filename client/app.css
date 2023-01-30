@@ -1,24 +1,22 @@
 body {
   margin: 0;
+  padding: 0;
 }
 
-.main {
-  padding: 8px;
+.product-option {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.task {
-  display: flex;
-  align-items: center;
-  border: 1px solid black;
-  padding: 2px;
-  max-width: 200px;
+.product-option.heading {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0.007em;
 }
 
-.task + .task {
-  margin-top: 4px;
+.product-option.subheading {
+  font-size: 16px;
+  line-height: 1.5;
 }
-
-.task > * + * {
-  margin-left: 4px;
-}
-

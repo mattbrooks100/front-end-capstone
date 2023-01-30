@@ -1,4 +1,5 @@
 import React from "react";
+import { ViewDetails } from "./viewDetails.jsx";
 import Reviews from "./Reviews.jsx";
 import FreeShipping from "./FreeShipping.jsx";
 
@@ -26,7 +27,7 @@ const Info = () => {
         <li>Style: Drippy</li>
       </ul>
       <div className="pb-10 border-b border-gray-200">
-        <button className="mt-6 font-semibold underline underline-offset-8 w-fit hover:text-gray-400">View Product Details</button>
+        <ViewDetails />
       </div>
       <FreeShipping />
       <Reviews />

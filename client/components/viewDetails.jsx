@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react'
-import {Dialog, Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 
 export const ViewDetails = () => {
     let [isOpen, setIsOpen] = useState(false)

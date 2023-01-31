@@ -30,11 +30,13 @@ const App = () => {
           <Info />
         </div>
       </div>
-      <div className="mt-16 mx-8">
+      <div className="my-16 mx-8">
         <Carousel />
       </div>
-      <Explore />
-      <Footer />
+      <div className="flex flex-col items-center w-full">
+        <Explore />
+        <Footer />
+      </div>
     </RecoilRoot>
   );
 };

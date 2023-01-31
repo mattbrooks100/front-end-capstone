@@ -6,6 +6,7 @@ import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
 import Info from "./Info";
 import Explore from "./Explore";
+import Cart from "./ProductOptions/Cart.jsx"
 
 const App = () => {
   // useEffect(() => {
@@ -18,6 +19,7 @@ const App = () => {
   //     });
   // }, []);
 
+
   return (
     <RecoilRoot>
       <header className="flex h-[100px] bg-gray-300 font-bold justify-center">
@@ -27,6 +29,7 @@ const App = () => {
         <ProductPhotos />
         <div>
           <ProductOptions />
+          <Cart />
           <Info />
         </div>
       </div>

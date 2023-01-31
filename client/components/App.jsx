@@ -1,25 +1,29 @@
-import React from "react";
-import { RecoilRoot } from "recoil";
+import React, { useEffect } from "react";
+import { RecoilRoot, useRecoilState } from "recoil";
 import ProductPhotos from "./ProductPhotos";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
 import Info from "./Info";
 import Explore from "./Explore";
+import shoeState from "./ProductOptions/shoeState";
 
 const App = () => {
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/api/shoes", {
-  //     mode: "cors",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((shoes) => {
-  //       setShoes(shoes);
-  //     });
-  // }, []);
+  const [shoe, setShoe] = useRecoilState(shoeState);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((shoe) => {
+        console.log(shoe);
+        setShoe(shoe);
+      });
+  }, []);
 
   return (
-    <RecoilRoot>
+    <div>
       <header className="flex h-[100px] bg-gray-300 font-bold justify-center">
         HEADER GOES HERE
       </header>
@@ -37,7 +41,7 @@ const App = () => {
         <Explore />
         <Footer />
       </div>
-    </RecoilRoot>
+    </div>
   );
 };
 

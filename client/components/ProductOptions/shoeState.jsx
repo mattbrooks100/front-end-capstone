@@ -1,8 +1,5 @@
 import { atom } from "recoil";
 
-
-// need to change color to Tan/White
-
 const shoeState = atom({
   key: "shoeState",
   default: {

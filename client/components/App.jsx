@@ -1,43 +1,46 @@
-import React from "react";
-import { RecoilRoot } from "recoil";
+import React, { useEffect } from "react";
+import { RecoilRoot, useRecoilState } from "recoil";
 import Header from "./Header"
 import ProductPhotos from "./ProductPhotos";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
-import Info from "./info";
+import Info from "./Info";
 import Explore from "./Explore";
 import "/app.css"
+import shoeState from "./ProductOptions/shoeState";
 
 const App = () => {
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/api/shoes", {
-  //     mode: "cors",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((shoes) => {
-  //       setShoes(shoes);
-  //     });
-  // }, []);
+  const [shoe, setShoe] = useRecoilState(shoeState);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((shoe) => {
+        setShoe(shoe);
+      });
+  }, []);
 
   return (
-    <RecoilRoot>
-      <header>
-     <Header/>
-      </header>
-      <div className="grid grid-cols-2 gap-16 mt-8 px-8 w-full justify-center">
+    <div>
+      <Header />
+      <div className="flex gap-16 mt-8 px-8 justify-center">
         <ProductPhotos />
-        <div>
+        <div className="w-[420px]">
           <ProductOptions />
           <Info />
         </div>
       </div>
-      <div className="mt-16 mx-8">
+      <div className="my-16 mx-8">
         <Carousel />
       </div>
-      <Explore />
-      <Footer />
-    </RecoilRoot>
+      <div className="flex flex-col items-center w-full">
+        <Explore />
+        <Footer />
+      </div>
+    </div>
   );
 };
 

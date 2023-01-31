@@ -17,7 +17,6 @@ const App = () => {
     })
       .then((res) => res.json())
       .then((shoe) => {
-        console.log(shoe);
         setShoe(shoe);
       });
   }, []);

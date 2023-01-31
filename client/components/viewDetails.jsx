@@ -1,6 +1,8 @@
 import React, {Fragment, useState} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
+//changed description to actual description on lines 62-64. changed style and shown in lines 85-86
+
 export const ViewDetails = () => {
     let [isOpen, setIsOpen] = useState(false)
 
@@ -58,8 +60,11 @@ export const ViewDetails = () => {
                     LEGENDARY STYLE DEFINED.
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                    The radiance lives on in the Nike Air Force 1 ’07, the b-ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.
+                    <p className="text-sm text-gray-500"> 
+                    Before cementing its status as a streetwear icon and skateboarding staple, 
+                    the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend.
+                     This low-top edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.
+
                     
                     <h4 className="text-lg font-medium leading-6 text-black-900">Benefits</h4>
                     <div className="mt-2 text-sm text-black-700">
@@ -77,13 +82,13 @@ export const ViewDetails = () => {
                         <li>Foam midsole</li>
                         <li>Perforations on the toe</li>
                         <li>Rubber sole</li>
-                        <li>Shown: White/White</li>
-                        <li>Style: CW2288-111</li>
+                        <li>Shown: Tan/White</li>
+                        <li>Style: DD1390-100</li>
                       </ul>
                     </div>
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Air Force 1 Origins</h4>
+                    <h4 className="text-lg font-medium leading-6 text-black-900">Nike Dunk Low</h4>
                     <p>
-                    Debuting in 1982, the AF1 was the first basketball shoe to house Nike Air, revolutionizing the game while rapidly gaining traction around the world. Today, the Air Force 1 stays true to its roots with the same soft and springy cushioning that changed sneaker history.
+                    One of the most iconic basketball sneakers created by Nike\, the Dunk originally made its debut in 1985. They have become a staple and continue to be re-released in numerous versions\, colorways and styles today.
                     </p>
                     </p>
                   </div>

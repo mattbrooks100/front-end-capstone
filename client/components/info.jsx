@@ -3,6 +3,9 @@ import { ViewDetails } from "./viewDetails.jsx";
 import Reviews from "./Reviews.jsx";
 import FreeShipping from "./FreeShipping.jsx";
 
+
+// changed info to be the same as medium curry info. lines 24-26. Changed color and style in line 30-31
+
 const Info = () => {
 
   return (
@@ -18,13 +21,14 @@ const Info = () => {
       {/**popup box that searches for stores in the area of the zipcode entered */}
       <p className="mt-6 text-sm text-gray-400">*Faster Shipping options may be available</p>
       <p className="mt-12 leading-7">
-        The radiance lives on in the Nike Air Force 1 ’07, the b-ball OG that puts a fresh spin on
-        what you know best: durably stitched overlays, clean finishes and the perfect amount of
-        flash to make you shine.
+      Before cementing its status as a streetwear icon and skateboarding staple, 
+      the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend.
+       This low-top edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.
+
       </p>
       <ul className="mt-8 leading-8 list-disc ml-6">
         <li>Shown: Tan/White</li>
-        <li>Style: Drippy</li>
+        <li>Style: Dunk Low</li>
       </ul>
       <div className="pb-10 border-b border-gray-200">
         <ViewDetails />

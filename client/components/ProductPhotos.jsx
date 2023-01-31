@@ -9,7 +9,7 @@ import Dunks6 from "../photos/Dunks6.jpg";
 
 const ProductPhotos = () => {
   return (
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-4 h-fit">
       <div>
         <img src={Dunks1}></img>
       </div>

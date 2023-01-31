@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react'
-import {Dialog, Transition } from '@headlessui/react'
+import { Dialog, Transition } from '@headlessui/react'
 
 //changed description to actual description on lines 62-64. changed style and shown in lines 85-86
 

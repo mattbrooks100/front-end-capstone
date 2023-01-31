@@ -12,9 +12,7 @@ const ShoeSizes = () => {
       <a href="#" className="flex justify-end font-[500] tracking-[0.02em] text-gray-500">
         Size Guide
       </a>
-      {shoe.sizes.map((size) => (
-        <Size key={size} size={size} />
-      ))}
+      {shoe.length && shoe[0].sizes.map((size) => <Size key={size} size={size} />)}
     </div>
   );
 };

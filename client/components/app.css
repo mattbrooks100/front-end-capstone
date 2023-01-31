@@ -1,0 +1,154 @@
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  
+  .HeaderBackground{
+    background-color: whitesmoke;
+    display: flex;
+    padding:3px;
+   justify-content: space-between;
+   height: 50px;
+  }
+
+  .HeaderLogos {
+    display: flex;
+    padding-left: 20px;
+  }
+  .jordan{
+    width: 28px;
+    height: 28px;
+    padding-top:.5vmin;
+    margin-left: 5.1vmin;
+  }
+  
+  .converse{
+    object-fit: contain;
+    width: 45px;
+    padding-top:.5vmin;
+    margin-left: 5.1vmin;
+  }
+  .HeaderRight{
+    display: flex;
+    flex-direction: row;
+    margin-right: 22px;
+    justify-content: space-between;
+  }
+  
+  .navBar {
+    display:flex;
+    /* background-color: orange; */
+    margin-left: 24px;
+    align-items: center;
+    padding: 2px;
+    max-width: 200px;
+    height: 55px;
+    padding-bottom: 20px;
+  }
+
+  .NikeLogo{
+    top:60px;
+    width: 355px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    padding-left: 50px;
+  }
+
+  .tabsContainer {
+   display: flex;
+   margin-left: 10vmin;
+  }
+  
+  .dropdown{
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 50px;
+    padding: 10px;
+    height: 70px;
+    transform: translate(550px);
+  }
+
+  .dropdown:hover {
+    text-decoration: underline;
+  }
+
+  .dropdown-menu{
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 100vmin;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    min-height: 200vmin;
+    z-index: 6;
+  }
+
+  .dropdown-heading {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(3, max-content);
+    gap: 2 rem;
+  }
+
+.dropdown-links{
+   grid-template-rows: repeat(2, max-content);
+   position: relative;
+   z-index: 1;
+}
+
+ .dropdown:hover .dropdown-menu {display: block;}
+
+  .searchbar {
+    position: relative;
+    display: block;
+    float: right;
+    padding-top: 70px;
+   transform: translate(760px);
+   display: flex;
+   padding-left: 240px;
+  }
+  
+  .magnifier{
+    position: relative;
+    left: 49px;
+    top:20px;
+    font-size: 25px;
+    height: 80px;
+    width: 40px;
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+  }
+  
+  .input{
+    border-radius: 22px;
+    opacity:90%;
+    background-color: whitesmoke;
+    border: none;
+    height: 50px;
+    margin-left: 30px;
+  }
+  
+  .heart{
+    padding-top: 70px;
+    padding-left: 10px;
+    transform: translate(770px, 10px);
+    width: 10px;
+  }
+
+  .shoppingBag{
+    transform: translate(790px, 10px);
+    padding-top: 70px;
+    padding-left: 10px;
+    
+  }
+  .HeaderCarousel{
+    background-color: whitesmoke;
+    height: 30px;
+   justify-content: center;
+   z-index: 1;
+  }
+ 
+  

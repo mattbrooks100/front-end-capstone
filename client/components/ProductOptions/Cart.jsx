@@ -1,27 +1,21 @@
 import React from 'react'
-
-
-//get data from backend(name, price, size, color)
-const getInfo = () => {
-  fetch("http://localhost:3000/api/shoes", {
-  }).then((res) => res.json())
-  .then((data) => {
-      console.log(data[0]);
-      <div>${data[0].name} ${data[0].price} ${data[0].color}</div>
-  })
-}
-getInfo()
-
-//post data under items in cart
-
+import shoeState from './shoeState'
+import { useRecoilState } from 'recoil'
+import Dunks1 from "/photos/Dunks1.jpg";
 
 const Cart = () => {
-
+  const [shoe, setShoe] = useRecoilState(shoeState)
+  
   return (
     <div>
-      <div>
-        <h1>Items in Cart</h1>
-        <h2></h2>
+      <div className="Cart" style={{border:'2px solid black', padding:'18px'}}>
+        <h1 style={{fontSize:'25px', font:'bold'}}>Items in Cart</h1>
+        <h2 style={{fontSize:'20px', font:'bold'}}>Name: {shoe.length && shoe[0].name}</h2>
+        <h3 style={{fontSize:'20px', font:'bold'}}>Price: ${shoe.length && shoe[0].price}</h3>
+        <h4 style={{fontSize:'20px', font:'bold'}}>Color: {shoe.length && shoe[0].color}</h4>
+        <h5 style={{fontSize:'20px', font:'bold'}}>Size: </h5>
+        <h6 style={{fontSize:'20px', font:'bold'}}>Quantity: </h6>
+        <img style={{width:'80px', height:'80px'}} src={Dunks1}></img>
       </div>
     </div>
   )

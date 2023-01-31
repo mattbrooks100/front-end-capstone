@@ -16,12 +16,6 @@ CREATE TABLE reviews (
   
 );
 
-DROP TABLE IF EXISTS  reviews;
-
-CREATE TABLE reviews (
-  id SERIAL,
-  
-);
 
 /*
 change name to actual show name, change color to Tan/White,

@@ -12,8 +12,7 @@ CREATE TABLE shoes (
 DROP TABLE IF EXISTS  reviews;
 
 CREATE TABLE reviews (
-  id SERIAL,
-  
+  id SERIAL
 );
 
 

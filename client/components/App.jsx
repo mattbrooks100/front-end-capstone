@@ -23,9 +23,9 @@ const App = () => {
       <header className="flex h-[100px] bg-gray-300 font-bold justify-center">
         HEADER GOES HERE
       </header>
-      <div className="grid grid-cols-2 gap-16 mt-8 px-8 w-full justify-center">
+      <div className="flex gap-16 mt-8 px-8 justify-center">
         <ProductPhotos />
-        <div>
+        <div className="w-[420px]">
           <ProductOptions />
           <Info />
         </div>

@@ -8,7 +8,7 @@ const shoeState = atom({
   default: {
     id: 1,
     //switched name to actual show name
-    name: "Nike Dunk Low 'Medium Curry",
+    name: "Nike Dunk Low 'Medium Curry'",
     category: "Men's Shoes",
     price: "110",
         // made color Tan/White

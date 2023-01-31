@@ -30,7 +30,7 @@ const Info = () => {
         <li>Shown: Tan/White</li>
         <li>Style: Dunk Low</li>
       </ul>
-      <div className="pb-10 border-b border-gray-200">
+      <div className="mt-6 pb-10 border-b border-gray-200">
         <ViewDetails />
       </div>
       <FreeShipping />

@@ -13,8 +13,14 @@ DROP TABLE IF EXISTS  reviews;
 
 CREATE TABLE reviews (
   id SERIAL,
-  
+  shoes_id INTEGER,
+  date DATE,
+  username TEXT,
+  body TEXT,
+  rating INTEGER
 );
+
+
 
 
 /*

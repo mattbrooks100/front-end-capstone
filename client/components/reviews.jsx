@@ -8,7 +8,16 @@ const Reviews = (props) => {
     return (
         <div className="py-8 border-b border-gray-200">
       <button className="flex w-full justify-between" onClick={() => setShowReview(!showReview)}>
-        <div className="text-xl">Reviews</div>
+        <div className="text-xl">
+          Reviews
+        </div>
+          <div className="justify-self-end">
+            <span className="fa fa-star checked"></span>
+            <span className="fa fa-star checked"></span>
+            <span className="fa fa-star checked"></span>
+            <span className="fa fa-star"></span>
+            <span className="fa fa-star"></span>
+          </div>
         {showReview ? (
           <MdOutlineKeyboardArrowUp size={25} />
         ) : (

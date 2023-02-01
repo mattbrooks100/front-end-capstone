@@ -5,7 +5,7 @@ import ProductPhotos from "./ProductPhotos";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
-import Info from "./Info";
+import Info from "./info";
 import Explore from "./Explore";
 import "/app.css"
 import shoeState from "./ProductOptions/shoeState";

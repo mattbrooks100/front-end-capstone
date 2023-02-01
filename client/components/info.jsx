@@ -1,7 +1,7 @@
 import React from "react";
 import { ViewDetails } from "./viewDetails.jsx";
-import Reviews from "./Reviews.jsx";
-import FreeShipping from "./FreeShipping.jsx";
+import Reviews from "./reviews.jsx";
+import FreeShipping from "./freeShipping.jsx";
 
 
 // changed info to be the same as medium curry info. lines 24-26. Changed color and style in line 30-31

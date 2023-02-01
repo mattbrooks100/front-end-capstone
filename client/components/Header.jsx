@@ -5,7 +5,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import JordanLogo from "./Logos/jordanlogo.png";
 import ConverseLogo from "./Logos/converse-logo-vector.png";
 import NikeLogo from "./Logos/NikeLogo.png"
-import "./app.css"
+import "./Header.css"
 import { HeaderRight } from './HeaderRight';
 import HeaderCarousel from './headercarousel';
 
@@ -36,8 +36,8 @@ export const Header = () => {
                 {/* mapping throught variable headercount to display contents */}
 
                 <div className='HeaderRight'>
-                    {headerContent.map((content) => (
-                        <HeaderRight content={content} />
+                    {headerContent.map((content, index) => (
+                        <HeaderRight key={index} content={content} />
                     ))}
                 </div>
 
@@ -47,57 +47,57 @@ export const Header = () => {
                     <img alt='NikeLogo' src={NikeLogo}></img>
                 </div>
                 <div className="tabsContainer">
-                    {TABS.map((tab) => (
-                        <div className='dropdown'>
+                    {TABS.map((tab, index) => (
+                        <div key={index} className='dropdown'>
                             {tab}
                             <div className='dropdown-menu'>
                                 <div>
                                     <div className='dropdown-heading'> New & Featured</div>
                                     <div className='dropdown-links'>
-                                        <a href='#' class="link">New Arrivals</a> <br></br>
-                                        <a href='#' class="link">Snkrs launch Calender</a> <br></br>
-                                        <a href='#' class="link">New and upcoming drops</a>
+                                        <a href='#' className="link">New Arrivals</a> <br></br>
+                                        <a href='#' className="link">Snkrs launch Calender</a> <br></br>
+                                        <a href='#' className="link">New and upcoming drops</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className='dropdown-heading'>Shoes</div>
                                     <div className='dropdown-links'>
-                                        <a href='#' class="link">All Shoes</a> <br></br>
-                                        <a href='#' class="link">Lifestyle</a> <br></br>
-                                        <a href='#' class="link">Running</a>
+                                        <a href='#' className="link">All Shoes</a> <br></br>
+                                        <a href='#' className="link">Lifestyle</a> <br></br>
+                                        <a href='#' className="link">Running</a>
                                     </div>
                                 </div>
                                 <div>
                                     <div className='dropdown-heading'>Clothing</div>
                                     <div className='dropdown-links'>
-                                        <a href='#' class="link">All Clothing</a> <br></br>
-                                        <a href='#' class="link">Top T-shirts</a> <br></br>
-                                        <a href='#' class="link">Shorts</a>
+                                        <a href='#' className="link">All Clothing</a> <br></br>
+                                        <a href='#' className="link">Top T-shirts</a> <br></br>
+                                        <a href='#' className="link">Shorts</a>
                                     </div>
                                 </div>
+                                <div>
                                 <div className='dropdown-heading'> Accesories & Equipment</div>
                                 <div className='dropdown-links'>
-                                    <a href='#' class="link">Bags & Backpacks</a> <br></br>
-                                    <a href='#' class="link">Apple watch Nike</a> <br></br>
-                                    <a href='#' class="link">Hats, Visors & Headbands </a>
+                                    <a href='#' className="link">Bags & Backpacks</a> <br></br>
+                                    <a href='#' className="link">Apple watch Nike</a> <br></br>
+                                    <a href='#' className="link">Hats, Visors & Headbands </a>
                                 </div>
-                            </div> 
-                            <div>
+                            </div>
                             </div>
                         </div>
                     ))}
 
                     <div className='searchbar'>
                         <i className='magnifier'>
-                            < FaSearchDollar />
+                            <FaSearchDollar />
                         </i>
                         <input className="input" type="text" placeholder='  Search ' />
                     </div>
                     <div className='heart'>
-                        < FaHeart />
+                        <FaHeart />
                     </div>
                     <div className='shoppingBag'>
-                        < FaShoppingBag />
+                        <FaShoppingBag />
                     </div>
                 </div>
             </div>

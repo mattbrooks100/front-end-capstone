@@ -52,34 +52,40 @@ export const Header = () => {
                             {tab}
                             <div className='dropdown-menu'>
                                 <div>
-                                    <div className='dropdown-heading'> New & Featured</div>
+                                    <div className='dropdown-heading'> New & Featured
                                     <div className='dropdown-links'>
                                         <a href='#' class="link">New Arrivals</a> <br></br>
                                         <a href='#' class="link">Snkrs launch Calender</a> <br></br>
                                         <a href='#' class="link">New and upcoming drops</a>
                                     </div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <div className='dropdown-heading'>Shoes</div>
+                                    <div className='dropdown-heading'>Shoes
                                     <div className='dropdown-links'>
                                         <a href='#' class="link">All Shoes</a> <br></br>
                                         <a href='#' class="link">Lifestyle</a> <br></br>
                                         <a href='#' class="link">Running</a>
                                     </div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <div className='dropdown-heading'>Clothing</div>
+                                    <div className='dropdown-heading'>Clothing
                                     <div className='dropdown-links'>
                                         <a href='#' class="link">All Clothing</a> <br></br>
                                         <a href='#' class="link">Top T-shirts</a> <br></br>
                                         <a href='#' class="link">Shorts</a>
                                     </div>
+                                    </div>
                                 </div>
-                                <div className='dropdown-heading'> Accesories & Equipment</div>
+                                <div>
+                                <div className='dropdown-heading'> Accesories & Equipment
                                 <div className='dropdown-links'>
                                     <a href='#' class="link">Bags & Backpacks</a> <br></br>
                                     <a href='#' class="link">Apple watch Nike</a> <br></br>
                                     <a href='#' class="link">Hats, Visors & Headbands </a>
+                                </div>
+                                </div>
                                 </div>
                             </div> 
                             <div>
@@ -97,7 +103,9 @@ export const Header = () => {
                         < FaHeart />
                     </div>
                     <div className='shoppingBag'>
+                        <a href="#">
                         < FaShoppingBag />
+                        </a>
                     </div>
                 </div>
             </div>

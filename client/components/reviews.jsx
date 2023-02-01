@@ -4,7 +4,15 @@ import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icon
 
 
 const Reviews = (props) => {
-    const [ showReview, setShowReview] = useState(false)
+  const [ showReview, setShowReview] = useState(false)
+  const [reviews, setReview] = useState([])
+    fetch('/api/reviews', {
+    })
+    .then(res => res.json())
+    .then(data => {
+      setReview(data)
+      return data
+    })
     return (
         <div className="py-8 border-b border-gray-200">
       <button className="flex w-full justify-between" onClick={() => setShowReview(!showReview)}>
@@ -28,7 +36,7 @@ const Reviews = (props) => {
       {showReview && (
         <div className="mt-8">
           <button className="font-semibold underline ml-1">Write a review</button>
-          <Dropdown />
+          <Dropdown  reviews={reviews}/>
           <button className="font-semibold underline ml-1">More Reviews</button>
           
         </div>

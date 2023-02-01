@@ -17,6 +17,12 @@ app.get("/api/shoes", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
+app.get("/api/reviews", (req, res) => {
+  sql`SELECT * FROM reviews`.then(review => {
+    res.send(review)
+  })
+})
+
+app.listen(3000, () => {
   console.log("listening on port 3000");
 });

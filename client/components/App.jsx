@@ -14,7 +14,7 @@ const App = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
 
   useEffect(() => {
-    fetch("http://localhost:3000/", {
+    fetch("/api/shoes", {
       mode: "cors",
     })
       .then((res) => res.json())

@@ -5,7 +5,7 @@ import ProductPhotos from "./ProductPhotos";
 import Carousel from "./Carousel";
 import ProductOptions from "./ProductOptions/ProductOptions.jsx";
 import Footer from "./Footer/Footer";
-import Info from "./Info";
+import Info from "./info";
 import Explore from "./Explore";
 import "/app.css"
 import shoeState from "./ProductOptions/shoeState";
@@ -17,7 +17,7 @@ const App = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
 
   useEffect(() => {
-    fetch("http://localhost:3000/", {
+    fetch("/api/shoes", {
       mode: "cors",
     })
       .then((res) => res.json())
@@ -25,6 +25,7 @@ const App = () => {
         setShoe(shoe);
       });
   }, []);
+
 
   return (
     <Routes>

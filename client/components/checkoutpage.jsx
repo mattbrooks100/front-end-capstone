@@ -16,7 +16,7 @@ const CheckOut = () => {
                         <img src={SummaryIcon}></img>
                     </div>
                     <div>
-                       <h1> {shoe.length && shoe[0].name} </h1>
+                       <h3> {shoe.length && shoe[0].name} </h3>
                        <h3> Men's Shoes</h3>
                        <h3> {shoe.length && shoe[0].color}</h3>
                        <h3> Size  Quantity</h3>

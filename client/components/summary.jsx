@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil"
 import shoeState from "./ProductOptions/shoeState";
 
 
+
 const Summary = (props) => {
     const [ showReview, setShowReview] = useState(false)
     const [ shoe, setShoe] = useRecoilState(shoeState)
@@ -64,6 +65,9 @@ const Summary = (props) => {
             </button>
             <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
       Paypal
+            </button>
+            <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
+      $DannyAndrewsBitcoin$
             </button>
         </div>     
     )

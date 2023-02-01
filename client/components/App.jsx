@@ -9,7 +9,6 @@ import Info from "./Info";
 import Explore from "./Explore";
 import "/app.css"
 import shoeState from "./ProductOptions/shoeState";
-import Cart from "./ProductOptions/Cart.jsx"
 
 const App = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
@@ -32,7 +31,6 @@ const App = () => {
         <ProductPhotos />
         <div className="w-[420px]">
           <ProductOptions />
-          <Cart />
           <Info />
         </div>
       </div>

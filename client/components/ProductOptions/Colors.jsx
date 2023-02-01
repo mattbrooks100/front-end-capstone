@@ -6,7 +6,7 @@ import nike_design_your_own from "../../photos/nike_design_your_own.png";
 const Colors = () => {
   return (
     <div className="flex flex-row gap-x-1 my-8">
-      <button className="rounded-md focus:outline focus:outline-1">
+      <button className="rounded-md focus:outline focus:outline-1 active:outline active:outline-1">
         <img
           className="max-h-[70px] rounded-md  cursor-pointer hover:border hover:border-black"
           src={nike_white}

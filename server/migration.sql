@@ -17,7 +17,8 @@ CREATE TABLE reviews (
   date DATE,
   username TEXT,
   body TEXT,
-  rating INTEGER
+  rating INTEGER,
+  amount INTEGER
 );
 
 

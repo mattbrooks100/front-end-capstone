@@ -11,6 +11,7 @@ const Reviews = (props) => {
         <div className="text-xl">
           Reviews
         </div>
+        <div></div>
           <div className="justify-self-end">
             <span className="fa fa-star checked"></span>
             <span className="fa fa-star checked"></span>

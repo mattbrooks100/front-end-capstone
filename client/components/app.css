@@ -150,5 +150,17 @@
    justify-content: center;
    z-index: 1;
   }
+
+  h1{
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+    
+  }
+
+  h4 {
+    text-align: right;
+  }
+
  
   

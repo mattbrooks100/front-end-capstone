@@ -5,44 +5,84 @@ import { FaShoppingBag } from "react-icons/fa";
 import JordanLogo from "./Logos/jordanlogo.png";
 import ConverseLogo from "./Logos/converse-logo-vector.png";
 import NikeLogo from "./Logos/NikeLogo.png";
-import "./app.css";
-import { HeaderRight } from "./HeaderRight";
 import HeaderCarousel from "./headercarousel";
 
-const TABS = ["New & Featured", "Men", "Women", "Kids", "Sales"];
-const headerContent = ["Find store", "|", "Help", "|", "Join Us", "|", "Sign In"];
-
 export const Header = () => {
-  const [activeTab, setActiveTab] = useState(false);
+  const [showNewMenu, setShowNewMenu] = useState(false);
+  const [showNewDropdown, setShowNewDropdown] = useState(false);
 
   return (
-    <div>
-      {/* creating the jordan logo and converse logo */}
-
-      <div className="HeaderBackground">
-        <div className="HeaderLogos">
-          <div className="jordan">
-            <img alt="Jordan Logo" src={JordanLogo} />
-          </div>
-
-          <div className="converse">
-            <img alt="Converse Logo" src={ConverseLogo} />
-          </div>
+    <div className="w-full">
+      <div className="top-header-bg flex items-center justify-between h-9 w-screen bg-gray-100">
+        <div className="top-header-logos flex">
+          <img alt="Jordan Logo" src={JordanLogo} className="h-[25px] ml-12 mr-6" />
+          <img alt="Converse Logo" src={ConverseLogo} className="h-[25px]" />
         </div>
-
-        {/* mapping throught variable headercount to display contents */}
-
-        <div className="HeaderRight">
-          {headerContent.map((content) => (
-            <HeaderRight content={content} />
-          ))}
+        <div className="top-header-links flex text-xs gap-2 mr-12">
+          <button className="pr-2 border-r border-black">Find Store</button>
+          <button className="pr-2 border-r border-black">Help</button>
+          <button className="pr-2 border-r border-black">Join Us</button>
+          <button>Sign In</button>
         </div>
       </div>
-      <div className="navBar">
+
+      {/* NEW NAVBAR */}
+      <div className="nav2-container">
+        <div className="nav2 flex w-screen justify-around">
+          <div>
+            <img alt="NikeLogo" src={NikeLogo} className="w-20"></img>
+          </div>
+          <div className="nav-links flex justify-between w-[400px] text-lg">
+            <button
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              New & Featured
+            </button>
+            <button>Men</button>
+            <button>Women</button>
+            <button>Kids</button>
+            <button>Sales</button>
+          </div>
+          <div className="nav-right-section flex w-fit items-center">
+            <div className="search-bar flex items-center relative">
+              <FaSearchDollar className="fa-lg absolute left-2 hover:bg-gray-200" />
+              <input
+                className="input text-center bg-gray-100 rounded-full h-9"
+                type="text"
+                placeholder="Search"
+              />
+            </div>
+            <div className="flex items-center">
+              <FaHeart className="ml-8 text-2xl" />
+              <FaShoppingBag className="ml-8 text-2xl" />
+            </div>
+          </div>
+        </div>
+        {(showNewMenu || showNewDropdown) && (
+          <div
+            className="dropdown-container"
+            onMouseEnter={() => setShowNewDropdown(true)}
+            onMouseLeave={() => setShowNewDropdown(false)}
+          >
+            <div className="dropdown z-11 w-screen bg-white">
+              <div className="flex flex-col">
+                <div className="font-semibold">New & Featured</div>
+                <div>New Arrivals</div>
+                <div>New in Running</div>
+                <div>SNKRS Launch Calendar</div>
+              </div>
+            </div>
+            <div className="dropdown-bg absolute z-10 h-screen w-screen bg-gray-200 opacity-75 "></div>
+          </div>
+        )}
+      </div>
+
+      {/* <div className="navBar">
         <div className="NikeLogo">
           <img alt="NikeLogo" src={NikeLogo}></img>
         </div>
-        <div className="tabsContainer">
+        <div className="tabsContainer w-fit">
           {TABS.map((tab) => (
             <div className="dropdown">
               {tab}
@@ -141,7 +181,7 @@ export const Header = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <HeaderCarousel />
     </div>
   );

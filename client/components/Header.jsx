@@ -30,7 +30,7 @@ export const Header = () => {
       <div className="nav2-container">
         <div className="nav2 h-[60px] flex items-center w-screen justify-between">
           <div>
-            <img alt="NikeLogo" src={NikeLogo} className="w-20 ml-12"></img>
+            <img alt="NikeLogo" src={NikeLogo} className="w-20 ml-12 mr-48"></img>
           </div>
           <div className="nav-links flex justify-between w-[400px] text-lg">
             <button

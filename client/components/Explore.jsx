@@ -3,7 +3,7 @@ import React from "react";
 const Explore = (props) => {
   return (
     <div style={{maxWidth: '100%'}}className="explore-container flex flex-col items-center">
-      <header className="text-xl my-14">
+      <header className="text-2xl my-14">
         Explore the Nike Dunk Low 'Medium Curry' Men's Shoes
       </header>
         <img style={{width: '2000px', height: '800px', objectFit: 'contain'}}
@@ -17,7 +17,7 @@ const Explore = (props) => {
           src="https://sneakernews.com/wp-content/uploads/2021/02/Nike-Dunk-Low-Medium-Curry-DD1390-100-04.jpg"
           alt=""
         />
-        <div className="mt-12 mb-24 text-xl">Where is my body</div>
+        <div className="mt-12 mb-24 text-xl">Help I've fallen and I can't get up!</div>
     </div>
   );
 };

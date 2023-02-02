@@ -62,67 +62,23 @@
    margin-left: 10px;
   }
   
-<<<<<<< HEAD:client/components/Header.css
-  .dropdown{
-   width: 100px;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-top: 50px;
-    padding: 10px;
-    height: 70px;
-    transform: translate(550px);
-    z-index: 1;
-  }
-=======
-
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351:client/components/app.css
 
   .dropdown:hover {
     text-decoration: underline;
   }
 
-<<<<<<< HEAD:client/components/Header.css
-  .dropdown-menu{
-    display: none;
-    /* position: relative; */
-    background-color: #f1f1f1;
-    min-width: 100vmin;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index:1;
-    min-height: 380px;
-  }
-  .dropdown-heading {
-    justify-content: space-evenly;
-    z-index: 1;
-    gap: 10px;
-  }
-
-.dropdown-links{
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-}
 .links{
   gap: .25rem
 }
 
  .dropdown:hover .dropdown-menu {display: flex;}
 
-=======
-  
-
- .dropdown:hover .dropdown-menu {
-  display: flex;
-  justify-content:space-between;
-}
-
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351:client/components/app.css
   .searchbar {
     position: relative;
     display: block;
     float: right;
-    padding-top: 70px;
-   transform: translate(400px);
+    padding-top: 40px;
+   transform: translate(715px);
    display: flex;
    padding-left: 240px;
   }
@@ -167,12 +123,8 @@
     background-color: whitesmoke;
     height: 30px;
    justify-content: center;
-<<<<<<< HEAD:client/components/Header.css
    z-index: 1;
-   opacity: -1;
-=======
-   z-index: -1;
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351:client/components/app.css
+
   }
  
   .dropdown-menu{
@@ -202,7 +154,6 @@
   font-size: 16px;
   width: 180px;
    grid-template-rows: repeat(2, max-content);
-   /* position: inherit; */
    z-index: 1;
    
 }

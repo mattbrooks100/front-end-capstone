@@ -8,15 +8,20 @@ import NikeLogo from "./Logos/NikeLogo.png"
 import "./Header.css"
 import { HeaderRight } from './HeaderRight';
 import HeaderCarousel from './headercarousel';
-
+import AddToBag from './ProductOptions/AddToBag';
+import { useRecoilState } from "recoil";
 
 const TABS = ["New & Featured", "Men", "Women", "Kids", "Sales"]
 const headerContent = ["Find store", "|", "Help", "|", "Join Us", "|", "Sign In"]
 
-export const Header = () => {
+export const Header = (props) => {
     const [activeTab, setActiveTab] = useState(false)
-
-
+    const [counter, setCounter] = useState(1)
+console.log("hello", )
+const handleClick = () => {
+    setCounter(counter + 1)
+    console.log(counter)
+}
     return (
         <div>
             {/* creating the jordan logo and converse logo */}
@@ -79,24 +84,16 @@ export const Header = () => {
                                     </div>
                                 </div>
                                 <div>
-<<<<<<< HEAD
-                                <div className='dropdown-heading'> Accesories & Equipment</div>
-=======
                                 <div className='dropdown-heading'> Accesories & Equipment
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351
                                 <div className='dropdown-links'>
                                     <a href='#' className="link">Bags & Backpacks</a> <br></br>
                                     <a href='#' className="link">Apple watch Nike</a> <br></br>
                                     <a href='#' className="link">Hats, Visors & Headbands </a>
                                 </div>
-<<<<<<< HEAD
-                            </div>
-=======
                                 </div>
                                 </div>
                             </div> 
                             <div>
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351
                             </div>
                         </div>
                     ))}
@@ -108,16 +105,13 @@ export const Header = () => {
                         <input className="input" type="text" placeholder='  Search ' />
                     </div>
                     <div className='heart'>
+                        
                         <FaHeart />
                     </div>
-                    <div className='shoppingBag'>
-<<<<<<< HEAD
-                        <FaShoppingBag />
-=======
-                        <a href="#">
+                    <div className='shoppingBag'  onClick={handleClick}>
+                        <a href="#" counter={counter}>
                         < FaShoppingBag />
                         </a>
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351
                     </div>
                 </div>
             </div>

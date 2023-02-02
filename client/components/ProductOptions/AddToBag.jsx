@@ -1,27 +1,11 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-const AddToBag = () => {
-
-  const [counter, setCounter] = useState(0)
-
-const handleClick = (FaShoppingBag) => {
-  setCounter(counter + 1)
-  console.log(counter)
-}
-  return (
-    <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500" onClick={handleClick}>
-      Add to Bag
-    </button>
-  );
-};
-=======
 import React, {Fragment, useState} from "react";
 import {Dialog, Transition} from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
 
-const AddToBag = () => {
+const AddToBag = (props) => {
+  const [counter, setCounter] = useState(1)
   const [shoe, setShoe] = useRecoilState(shoeState);
 
   let [isOpen, setIsOpen] = useState(false)
@@ -32,17 +16,21 @@ const AddToBag = () => {
 
   function openModal() {
     setIsOpen(true)
+    
   }
-
+const handleClick = (props) => {
+  setCounter(counter + 1)
+    console.log(counter)
+}
 
   return (
     <div>
-        <div className="relative inset-0 flex items-center ">
+        <div className="relative inset-0 flex items-center " onClick={handleClick} >
         <a
-          onClick={openModal}
+          onClick={openModal} 
           className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
         >
-          <u><center>Add To Bag</center></u>
+          <u ><center>Add To Bag</center></u>
         </a>
       </div>
 
@@ -117,6 +105,5 @@ const AddToBag = () => {
 }
 
 
->>>>>>> a0c52154ddc3d6077c99a63ee84a1a5e8e115351
 
 export default AddToBag;

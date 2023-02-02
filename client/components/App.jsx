@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { RecoilRoot, useRecoilState } from "recoil";
 import Header from "./Header"
 import ProductPhotos from "./ProductPhotos";
@@ -12,6 +12,7 @@ import shoeState from "./ProductOptions/shoeState";
 
 const App = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
+ 
 
   useEffect(() => {
     fetch("/api/shoes", {

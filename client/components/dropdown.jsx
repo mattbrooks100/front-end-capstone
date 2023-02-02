@@ -1,11 +1,15 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import reviewState from "./reviewState";
 
 export const Dropdown = (props) => {
+  const [reviews, setReview] = useRecoilState(reviewState);
+
   return (
     <div>
       <div className="relative ">
         <ul>
-          {props.reviews.map((review) => {
+          {reviews.map((review) => {
             const newDate = new Date(review.date);
             newDate.setDate(newDate.getDate() + 1);
             const formattedDate = newDate.toLocaleDateString("en-us", {

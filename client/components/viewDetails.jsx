@@ -59,14 +59,14 @@ export const ViewDetails = () => {
                   >
                     LEGENDARY STYLE DEFINED.
                   </Dialog.Title>
-                  <div className="mt-2">
+                  <div className="flex mt-2 justify-start">
                     <p className="text-sm text-gray-500"> 
                     Before cementing its status as a streetwear icon and skateboarding staple, 
                     the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend.
                      This low-top edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.
 
                     
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Benefits</h4>
+                    <div className="mt-4 text-lg font-medium leading-6 text-black-900">Benefits</div>
                     <div className="mt-2 text-sm text-black-700">
                       <ul className='leading-8 list-disc ml-6'>
                         <li>The stitched overlays on the upper add heritage style, durability and support.</li>
@@ -76,7 +76,7 @@ export const ViewDetails = () => {
                       </ul>
                     </div>
 
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Product Details</h4>
+                    <div className="mt-4 text-lg font-medium leading-6 text-black-900">Product Details</div>
                     <div className="mt-2 text-sm text-black-700">
                       <ul className='leading-8 list-disc ml-6'>
                         <li>Foam midsole</li>
@@ -86,7 +86,7 @@ export const ViewDetails = () => {
                         <li>Style: DD1390-100</li>
                       </ul>
                     </div>
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Nike Dunk Low</h4>
+                    <div className="mt-4 text-lg font-medium leading-6 text-black-900">Nike Dunk Low</div>
                     <p>
                     One of the most iconic basketball sneakers created by Nike\, the Dunk originally made its debut in 1985. They have become a staple and continue to be re-released in numerous versions\, colorways and styles today.
                     </p>

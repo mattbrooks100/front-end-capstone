@@ -9,11 +9,10 @@ import HeaderCarousel from "./headercarousel";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
 
 export const Header = () => {
+  
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
   const [counter, setCounter] = useRecoilState(counterAtom)
-  
- 
 
   return (
     <div className="w-full">
@@ -85,10 +84,15 @@ export const Header = () => {
             <div > </div>
             <div className="flex items-center"  >
               <FaHeart className="ml-8 text-2xl" />
-              <a href="/checkout" >
+              <a href="/checkout" > 
+              <div className="flex relative">
                 <FaShoppingBag className="ml-8 text-2xl" />
-               {counter}
+                <div className=" flex relative top-0 right-0 ">
+                {counter}
+                </div>
+               </div>
               </a>
+               
             </div>
           </div>
         </div>

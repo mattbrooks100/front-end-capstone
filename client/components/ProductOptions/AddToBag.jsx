@@ -17,13 +17,16 @@ const AddToBag = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  
+
   const handleClick = () => {
     setIsOpen(true);
     setCounter(counter + 1);
     setQuantity(quantity + 1);
   }
-  
+const keep = useMemo(() => {
+  return counter
+} ,[counter])
+
   return (
     <div>
       <div className="relative inset-0 flex items-center">

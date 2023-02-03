@@ -8,8 +8,9 @@ import HeaderCarousel from "./headercarousel";
  import counterAtom from "./couterAtom";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
 
+
+
 export const Header = () => {
-  
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
   const [counter, setCounter] = useRecoilState(counterAtom)

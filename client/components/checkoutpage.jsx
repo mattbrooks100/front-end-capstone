@@ -2,9 +2,14 @@ import React from "react";
 import SummaryIcon from "../photos/SummaryIcon.jpg";
 import { useRecoilState } from "recoil"
 import shoeState from "./ProductOptions/shoeState";
+import sizeState from "./sizeState.jsx";
+import quantityState from "./quantityState.jsx";
 
 const CheckOut = () => {
     const [ shoe, setShoe] = useRecoilState(shoeState)
+    const [sizeSelected, setSizeSelected] = useRecoilState(sizeState);
+    const [quantity, setQuantity] = useRecoilState(quantityState);
+
 
 
     return (
@@ -19,7 +24,8 @@ const CheckOut = () => {
                        <h3> {shoe.length && shoe[0].name} </h3>
                        <h3> Men's Shoes</h3>
                        <h3> {shoe.length && shoe[0].color}</h3>
-                       <h3> Size  Quantity</h3>
+                       <h3> Size: {sizeSelected} </h3>
+                       <h3> Quantity: {quantity}</h3>
                     </div>
                     <div>
                         <h4>

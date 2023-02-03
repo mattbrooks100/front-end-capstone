@@ -12,7 +12,6 @@ const Summary = (props) => {
 
     const totalPrice = (props) => {
         // let total = shoe.length && shoe[0].price * shoe.length && shoe[0].quantity + 7
-        console.log(shoe.length && shoe[0].price)
         let total = `$ ${Number(shoe.length && shoe[0].price) + 7}`
         return total;
     }
@@ -38,7 +37,6 @@ const Summary = (props) => {
             <label for="promo">Promo Code:</label>
             <input type="text" id="promo" name="promo"></input>
             <button type="button">Apply</button>
-            <Dropdown />
             </div>
         )}
             </div>

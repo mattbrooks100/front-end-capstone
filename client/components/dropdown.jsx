@@ -7,7 +7,6 @@ export const Dropdown = (props) => {
           <ul>
             {props.reviews.map(review => {
               return(
-                
                 <li>
                   <h5>{review.title}</h5>
                   <div className='justify-between'>

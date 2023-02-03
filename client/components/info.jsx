@@ -24,7 +24,6 @@ const Info = () => {
       Before cementing its status as a streetwear icon and skateboarding staple, 
       the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend.
        This low-top edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.
-
       </p>
       <ul className="mt-8 leading-8 list-disc ml-6">
         <li>Shown: Tan/White</li>

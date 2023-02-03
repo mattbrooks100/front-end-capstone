@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "./dropdown";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
-
+import { WriteReview } from "./writeReview";
 
 const Reviews = (props) => {
   const [ showReview, setShowReview] = useState(false)
@@ -35,10 +35,9 @@ const Reviews = (props) => {
       </button>
       {showReview && (
         <div className="mt-8">
-          <button className="font-semibold underline ml-1">Write a review</button>
+          <button className="font-semibold underline ml-1"><WriteReview /></button>
           <Dropdown  reviews={reviews}/>
           <button className="font-semibold underline ml-1">More Reviews</button>
-          
         </div>
       )}
     </div>        

@@ -9,7 +9,7 @@ export const Dropdown = (props) => {
     <div>
       <div className="relative ">
         <ul>
-          {reviews.map((review) => {
+          {props.reviews.map((review) => {
             const newDate = new Date(review.date);
             newDate.setDate(newDate.getDate() + 1);
             const formattedDate = newDate.toLocaleDateString("en-us", {

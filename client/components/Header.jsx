@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
-import JordanLogo from "./Logos/jordanlogo.png";
-import ConverseLogo from "./Logos/converse-logo-vector.png";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
  import { useRecoilState } from "recoil";
  import counterAtom from "./couterAtom";
+import combinedLogo from "./Logos/combined-converse-jordan.png";
 
 export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
@@ -20,8 +19,7 @@ export const Header = () => {
     <div className="w-full">
       <div className="top-header-bg flex items-center justify-between h-9 w-screen bg-gray-100">
         <div className="top-header-logos flex">
-          <img alt="Jordan Logo" src={JordanLogo} className="h-[25px] ml-12 mr-6" />
-          <img alt="Converse Logo" src={ConverseLogo} className="h-[25px]" />
+          <img src={combinedLogo} className="ml-12"/>
         </div>
         <div className="top-header-links flex text-xs gap-2 mr-12">
           <button className="pr-2 border-r border-black hover:text-gray-500">Find Store</button>

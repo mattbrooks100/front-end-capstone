@@ -44,7 +44,7 @@ const App = () => {
               <ProductPhotos />
               <div className="w-[420px]">
                 <ProductOptions />
-                <Info />
+                <Info reviews={reviews}/>
               </div>
             </div>
             <div className="my-16 mx-8">

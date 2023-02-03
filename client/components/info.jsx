@@ -6,7 +6,7 @@ import FreeShipping from "./freeShipping.jsx";
 
 // changed info to be the same as medium curry info. lines 24-26. Changed color and style in line 30-31
 
-const Info = () => {
+const Info = (props) => {
 
   return (
     <div className="container mt-14 font-sans">
@@ -33,7 +33,7 @@ const Info = () => {
         <ViewDetails />
       </div>
       <FreeShipping />
-      <Reviews />
+      <Reviews reviews={props.reviews} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown } from "./dropdown";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
+import { WriteReview } from "./writeReview";
 
 const Reviews = (props) => {
   const [showReview, setShowReview] = useState(false);
@@ -26,9 +27,9 @@ const Reviews = (props) => {
       </button>
       {showReview && (
         <div className="mt-8">
-          <button className="font-semibold underline mb-4">Write a review</button>
-          <Dropdown />
-          <button className="font-semibold underline">More Reviews</button>
+          <button className="font-semibold underline mb-4"><WriteReview /></button>
+          <Dropdown  reviews={props.reviews}/>
+          <button className="font-semibold underline mb-4">More Reviews</button>
         </div>
       )}
     </div>

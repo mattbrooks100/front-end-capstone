@@ -58,6 +58,15 @@ const AddToBag = () => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   ></Dialog.Title>
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black-900 hover:text-black-500 cursor-pointer"
+                      onClick={closeModal}
+                    >
+                      X
+                    </button>
+                  </div>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
                       <div className="Cart" style={{ border: "2px solid black", padding: "18px" }}>
@@ -76,17 +85,14 @@ const AddToBag = () => {
                         <img style={{ width: "80px", height: "80px" }} src={Dunks1}></img>
                       </div>
                     </p>
+                  </div> <br></br>
+                  <div className="flex items-center">
+                   <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
+                      <a href="/checkout" style={{fontSize:'20px'}}> Proceed To Checkout </a>
+                    </button> 
                   </div>
 
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black-900 hover:text-black-500 cursor-pointer"
-                      onClick={closeModal}
-                    >
-                      X
-                    </button>
-                  </div>
+                  
                 </Dialog.Panel>
               </Transition.Child>
             </div>

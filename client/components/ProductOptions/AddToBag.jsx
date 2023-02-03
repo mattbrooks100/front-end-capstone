@@ -4,37 +4,34 @@ import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
 import counterAtom from "../couterAtom";
-
+import sizeState from "../sizeState.jsx";
+import quantityState from "../quantityState.jsx";
 
 const AddToBag = () => {
   const [counter, setCounter] = useRecoilState(counterAtom)
-
   const [shoe, setShoe] = useRecoilState(shoeState);
-
-  let [isOpen, setIsOpen] = useState(false);
+  const [sizeSelected, setSizeSelected] = useRecoilState(sizeState);
+  const [quantity, setQuantity] = useRecoilState(quantityState);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
   }
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  const handleClick = () => {
-    setCounter(counter + 1);
   
+  const handleClick = () => {
+    setIsOpen(true);
+    setCounter(counter + 1);
+    setQuantity(quantity + 1);
   }
   
   return (
     <div>
-      <div className="relative inset-0 flex items-center" onClick={handleClick}>
+      <div className="relative inset-0 flex items-center">
         <button
-          onClick={openModal}
+          onClick={handleClick}
           className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
         >
           <div>Add To Bag</div>
-          
         </button>
       </div>
 
@@ -81,8 +78,8 @@ const AddToBag = () => {
                         <h4 style={{ fontSize: "20px", font: "bold" }}>
                           Color: {shoe.length && shoe[0].color}
                         </h4>
-                        <h5 style={{ fontSize: "20px", font: "bold" }}>Size: </h5>
-                        <h6 style={{ fontSize: "20px", font: "bold" }}>Quantity: </h6>
+                        <h5 style={{ fontSize: "20px", font: "bold" }}>Size: {sizeSelected}</h5>
+                        <h6 style={{ fontSize: "20px", font: "bold" }}>Quantity: {quantity}</h6>
                         <img style={{ width: "80px", height: "80px" }} src={Dunks1}></img>
                       </div>
                     </p>

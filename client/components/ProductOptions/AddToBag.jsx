@@ -3,8 +3,12 @@ import { Dialog, Transition } from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
+import counterAtom from "../couterAtom";
+
 
 const AddToBag = () => {
+  const [counter, setCounter] = useRecoilState(counterAtom)
+
   const [shoe, setShoe] = useRecoilState(shoeState);
 
   let [isOpen, setIsOpen] = useState(false);
@@ -17,14 +21,20 @@ const AddToBag = () => {
     setIsOpen(true);
   }
 
+  const handleClick = () => {
+    setCounter(counter + 1);
+  
+  }
+  
   return (
     <div>
-      <div className="relative inset-0 flex items-center ">
+      <div className="relative inset-0 flex items-center" onClick={handleClick}>
         <button
           onClick={openModal}
           className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
         >
           <div>Add To Bag</div>
+          
         </button>
       </div>
 
@@ -97,4 +107,4 @@ const AddToBag = () => {
   );
 };
 
-export default AddToBag;
+export default AddToBag; 

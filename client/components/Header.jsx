@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
+ import { useRecoilState } from "recoil";
+ import counterAtom from "./couterAtom";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
 
 export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
+  const [counter, setCounter] = useRecoilState(counterAtom)
+  
+ 
 
   return (
     <div className="w-full">
@@ -77,10 +82,12 @@ export const Header = () => {
                 placeholder="Search"
               />
             </div>
-            <div className="flex items-center">
+            <div > </div>
+            <div className="flex items-center"  >
               <FaHeart className="ml-8 text-2xl" />
-              <a href="/checkout">
+              <a href="/checkout" >
                 <FaShoppingBag className="ml-8 text-2xl" />
+               {counter}
               </a>
             </div>
           </div>
@@ -130,6 +137,7 @@ export const Header = () => {
             </div>
             <div className="dropdown-bg absolute z-10 h-screen w-screen bg-gray-200 opacity-75 "></div>
           </div>
+
         )}
       </div>
       <HeaderCarousel />

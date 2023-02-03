@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
@@ -15,11 +15,17 @@ const AddToBag = () => {
   const [sizeSelected, setSizeSelected] = useRecoilState(sizeState);
   const [quantity, setQuantity] = useRecoilState(quantityState);
   const [isOpen, setIsOpen] = useState(false);
+  let shoeSelected = {};
+  const [cart, setCart] = useState([]);
 
   function closeModal() {
     setIsOpen(false);
   }
 
+  const storeCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  
   const handleClick = () => {
     if (sizeSelected.length === 0) {
       alert("Please select a size.");
@@ -29,6 +35,14 @@ const AddToBag = () => {
     setCounter(counter + 1);
     setQuantity(quantity + 1);
     sizeArray.push(sizeSelected);
+    
+    shoeSelected = {
+      name: shoe[0].name,
+      price: shoe[0].price,
+      size: sizeSelected,
+    };
+    setCart([...cart, shoeSelected]);
+    storeCart();
   };
 
   return (

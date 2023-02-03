@@ -7,7 +7,7 @@ import shoeState from "./ProductOptions/shoeState";
 
 
 const Summary = (props) => {
-    const [ showReview, setShowReview] = useState(false)
+    const [ showPromo, setShowPromo] = useState(false)
     const [ shoe, setShoe] = useRecoilState(shoeState)
 
     const totalPrice = (props) => {
@@ -25,15 +25,15 @@ const Summary = (props) => {
                 </h1>
             </div>
             <div className="py-8 border-b border-gray-200">
-            <button className="flex w-full justify-between" onClick={() => setShowReview(!showReview)}>
+            <button className="flex w-full justify-between" onClick={() => setShowPromo(!showPromo)}>
             <div className="text-xl">Do you have a promo code? </div>
-            {showReview ? (
+            {showPromo ? (
             <MdOutlineKeyboardArrowUp size={25} />
             ) : (
             <MdOutlineKeyboardArrowDown size={25} />
             )}
         </button>
-        {showReview && (
+        {showPromo && (
             <div className="mt-8">
             <label for="promo">Promo Code:</label>
             <input type="text" id="promo" name="promo"></input>

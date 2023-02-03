@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Dropdown } from "./dropdown";
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { useRecoilState } from "recoil"
@@ -7,15 +7,24 @@ import shoeState from "./ProductOptions/shoeState";
 
 
 const Summary = (props) => {
-    const [ showReview, setShowReview] = useState(false)
+    const [ showPromo, setShowPromo] = useState(false)
     const [ shoe, setShoe] = useRecoilState(shoeState)
+    const promoRef = useRef();
 
     const totalPrice = (props) => {
         // let total = shoe.length && shoe[0].price * shoe.length && shoe[0].quantity + 7
-        console.log(shoe.length && shoe[0].price)
         let total = `$ ${Number(shoe.length && shoe[0].price) + 7}`
         return total;
     }
+
+    // function promoCode(e) {
+    //     if (promoRef.current.value = 'jersen420') {
+    //     console.log( totalPrice())
+    //     } else {
+    //         return false;
+    //     }
+        
+    // }
 
     return (
         <div>
@@ -25,19 +34,19 @@ const Summary = (props) => {
                 </h1>
             </div>
             <div className="py-8 border-b border-gray-200">
-            <button className="flex w-full justify-between" onClick={() => setShowReview(!showReview)}>
+            <button className="flex w-full justify-between" onClick={() => setShowPromo(!showPromo)}>
             <div className="text-xl">Do you have a promo code? </div>
-            {showReview ? (
+            {showPromo ? (
             <MdOutlineKeyboardArrowUp size={25} />
             ) : (
             <MdOutlineKeyboardArrowDown size={25} />
             )}
         </button>
-        {showReview && (
+        {showPromo && (
             <div className="mt-8">
             <label for="promo">Promo Code:</label>
-            <input type="text" id="promo" name="promo"></input>
-            <button type="button">Apply</button>
+            <input ref={promoRef}type="text" id="promo" name="promo"></input>
+            <button onClick={promoCode}type="button">Apply</button>
             <Dropdown />
             </div>
         )}

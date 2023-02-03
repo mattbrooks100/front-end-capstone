@@ -1,16 +1,45 @@
-import React from 'react'
+import React from "react";
+import { useRecoilState } from "recoil";
+import reviewState from "./reviewState";
 
-export const Dropdown = () => {
+export const Dropdown = (props) => {
+  const [reviews, setReview] = useRecoilState(reviewState);
+
   return (
-    <div><summary
-    className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute 
-    transition duration-150 ease-in-out origin-top min-w-32"
-    >
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae suscipit ducimus laudantium reprehenderit libero. Aut beatae delectus voluptatibus nobis consequuntur, optio odit quas sapiente saepe mollitia vitae. Tempore, nostrum excepturi!
-        </p>
-        
-            
-    </summary></div>
-  )
-}
+    <div>
+      <div className="relative ">
+        <ul>
+          {reviews.map((review) => {
+            const newDate = new Date(review.date);
+            newDate.setDate(newDate.getDate() + 1);
+            const formattedDate = newDate.toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            });
+            return (
+              <li>
+                <h5 className="text-lg">{review.title}</h5>
+                <div className="justify-between">
+                  <div className="mb-4">
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star checked"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="fa fa-star"></span>
+                    <span className="relative float-right text-gray-500">
+                      {review.username} - {formattedDate}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="mb-8">{review.body}</p>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};

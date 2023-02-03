@@ -1,41 +1,44 @@
-import React, {Fragment, useState} from "react";
-import {Dialog, Transition} from "@headlessui/react";
+import React, { Fragment, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
+import counterAtom from "../couterAtom";
 
-const AddToBag = (props) => {
-  const [counter, setCounter] = useState(1)
+
+const AddToBag = () => {
+  const [counter, setCounter] = useRecoilState(counterAtom)
+
   const [shoe, setShoe] = useRecoilState(shoeState);
 
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true)
-    
+    setIsOpen(true);
   }
-const handleClick = (props) => {
-  setCounter(counter + 1)
-    console.log(counter)
-}
 
+  const handleClick = () => {
+    setCounter(counter + 1);
+  
+  }
+  
   return (
     <div>
-        <div className="relative inset-0 flex items-center " onClick={handleClick} >
-        <a
-          onClick={openModal} 
+      <div className="relative inset-0 flex items-center" onClick={handleClick}>
+        <button
+          onClick={openModal}
           className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
         >
-          <u ><center>Add To Bag</center></u>
-        </a>
+          <div>Add To Bag</div>
+          
+        </button>
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>
-        
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -61,28 +64,30 @@ const handleClick = (props) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    
-                  </Dialog.Title>
+                  ></Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500"> 
-                    <div className="Cart" style={{border:'2px solid black', padding:'18px'}}>
-        <h1 style={{fontSize:'25px', font:'bold'}}>Items in Cart</h1>
-        <h2 style={{fontSize:'20px', font:'bold'}}>Name: {shoe.length && shoe[0].name}</h2>
-        <h3 style={{fontSize:'20px', font:'bold'}}>Price: ${shoe.length && shoe[0].price}</h3>
-        <h4 style={{fontSize:'20px', font:'bold'}}>Color: {shoe.length && shoe[0].color}</h4>
-        <h5 style={{fontSize:'20px', font:'bold'}}>Size: </h5>
-        <h6 style={{fontSize:'20px', font:'bold'}}>Quantity: </h6>
-        <img style={{width:'80px', height:'80px'}} src={Dunks1}></img>
-      </div>
-      
+                    <p className="text-sm text-gray-500">
+                      <div className="Cart" style={{ border: "2px solid black", padding: "18px" }}>
+                        <h1 style={{ fontSize: "25px", font: "bold" }}>Items in Cart</h1>
+                        <h2 style={{ fontSize: "20px", font: "bold" }}>
+                          Name: {shoe.length && shoe[0].name}
+                        </h2>
+                        <h3 style={{ fontSize: "20px", font: "bold" }}>
+                          Price: ${shoe.length && shoe[0].price}
+                        </h3>
+                        <h4 style={{ fontSize: "20px", font: "bold" }}>
+                          Color: {shoe.length && shoe[0].color}
+                        </h4>
+                        <h5 style={{ fontSize: "20px", font: "bold" }}>Size: </h5>
+                        <h6 style={{ fontSize: "20px", font: "bold" }}>Quantity: </h6>
+                        <img style={{ width: "80px", height: "80px" }} src={Dunks1}></img>
+                      </div>
                     </p>
                   </div>
-                  
+
                   <div className="mt-4">
                     <button
                       type="button"
@@ -93,17 +98,13 @@ const handleClick = (props) => {
                     </button>
                   </div>
                 </Dialog.Panel>
-                
               </Transition.Child>
             </div>
           </div>
         </Dialog>
       </Transition>
     </div>
-    
-  )
-}
+  );
+};
 
-
-
-export default AddToBag;
+export default AddToBag; 

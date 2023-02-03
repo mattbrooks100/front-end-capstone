@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
@@ -6,10 +6,15 @@ import JordanLogo from "./Logos/jordanlogo.png";
 import ConverseLogo from "./Logos/converse-logo-vector.png";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
+ import { useRecoilState } from "recoil";
+ import counterAtom from "./couterAtom";
 
 export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
+  const [counter, setCounter] = useRecoilState(counterAtom)
+  
+ 
 
   return (
     <div className="w-full">
@@ -19,10 +24,10 @@ export const Header = () => {
           <img alt="Converse Logo" src={ConverseLogo} className="h-[25px]" />
         </div>
         <div className="top-header-links flex text-xs gap-2 mr-12">
-          <button className="pr-2 border-r border-black">Find Store</button>
-          <button className="pr-2 border-r border-black">Help</button>
-          <button className="pr-2 border-r border-black">Join Us</button>
-          <button>Sign In</button>
+          <button className="pr-2 border-r border-black hover:text-gray-500">Find Store</button>
+          <button className="pr-2 border-r border-black hover:text-gray-500">Help</button>
+          <button className="pr-2 border-r border-black hover:text-gray-500">Join Us</button>
+          <button className="hover:text-gray-500">Sign In</button>
         </div>
       </div>
 
@@ -72,16 +77,20 @@ export const Header = () => {
           {/* SEARCH BAR, FAVORITES, BAG */}
           <div className="nav-right-section flex w-fit items-center mr-12">
             <div className="search-bar flex items-center relative">
-              <FaSearchDollar className="fa-lg absolute left-2 hover:bg-gray-200" />
+              <FaSearchDollar className="fa-lg absolute left-2  rounded-full hover:bg-gray-200" />
               <input
                 className="input text-center bg-gray-100 rounded-full h-9"
                 type="text"
                 placeholder="Search"
               />
             </div>
-            <div className="flex items-center">
+            <div > </div>
+            <div className="flex items-center"  >
               <FaHeart className="ml-8 text-2xl" />
-              <FaShoppingBag className="ml-8 text-2xl" />
+              <a href="/checkout" >
+                <FaShoppingBag className="ml-8 text-2xl" />
+               {counter}
+              </a>
             </div>
           </div>
         </div>

@@ -2,145 +2,135 @@ import React, { useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
-import JordanLogo from "./Logos/jordanlogo.png";
-import ConverseLogo from "./Logos/converse-logo-vector.png";
 import NikeLogo from "./Logos/NikeLogo.png";
-import "./app.css";
-import { HeaderRight } from "./HeaderRight";
 import HeaderCarousel from "./headercarousel";
-
-const TABS = ["New & Featured", "Men", "Women", "Kids", "Sales"];
-const headerContent = ["Find store", "|", "Help", "|", "Join Us", "|", "Sign In"];
+import combinedLogo from "./Logos/combined-converse-jordan.png";
 
 export const Header = () => {
-  const [activeTab, setActiveTab] = useState(false);
+  const [showNewMenu, setShowNewMenu] = useState(false);
+  const [showNewDropdown, setShowNewDropdown] = useState(false);
 
   return (
-    <div>
-      {/* creating the jordan logo and converse logo */}
-
-      <div className="HeaderBackground">
-        <div className="HeaderLogos">
-          <div className="jordan">
-            <img alt="Jordan Logo" src={JordanLogo} />
-          </div>
-
-          <div className="converse">
-            <img alt="Converse Logo" src={ConverseLogo} />
-          </div>
+    <div className="w-full">
+      <div className="top-header-bg flex items-center justify-between h-9 w-screen bg-gray-100">
+        <div className="top-header-logos flex">
+          <img src={combinedLogo} className="ml-12"/>
         </div>
-
-        {/* mapping throught variable headercount to display contents */}
-
-        <div className="HeaderRight">
-          {headerContent.map((content) => (
-            <HeaderRight content={content} />
-          ))}
+        <div className="top-header-links flex text-xs gap-2 mr-12">
+          <button className="pr-2 border-r border-black hover:text-gray-500">Find Store</button>
+          <button className="pr-2 border-r border-black hover:text-gray-500">Help</button>
+          <button className="pr-2 border-r border-black hover:text-gray-500">Join Us</button>
+          <button className="hover:text-gray-500">Sign In</button>
         </div>
       </div>
-      <div className="navBar">
-        <div className="NikeLogo">
-          <img alt="NikeLogo" src={NikeLogo}></img>
-        </div>
-        <div className="tabsContainer">
-          {TABS.map((tab) => (
-            <div className="dropdown">
-              {tab}
-              <div className="dropdown-menu">
-                <div>
-                  <div className="dropdown-heading">
-                    {" "}
-                    New & Featured
-                    <div className="dropdown-links">
-                      <a href="#" class="link">
-                        New Arrivals
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Snkrs launch Calender
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        New and upcoming drops
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="dropdown-heading">
-                    Shoes
-                    <div className="dropdown-links">
-                      <a href="#" class="link">
-                        All Shoes
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Lifestyle
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Running
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="dropdown-heading">
-                    Clothing
-                    <div className="dropdown-links">
-                      <a href="#" class="link">
-                        All Clothing
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Top T-shirts
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Shorts
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="dropdown-heading">
-                    {" "}
-                    Accesories & Equipment
-                    <div className="dropdown-links">
-                      <a href="#" class="link">
-                        Bags & Backpacks
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Apple watch Nike
-                      </a>{" "}
-                      <br></br>
-                      <a href="#" class="link">
-                        Hats, Visors & Headbands{" "}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div></div>
-            </div>
-          ))}
 
-          <div className="searchbar">
-            <i className="magnifier">
-              <FaSearchDollar />
-            </i>
-            <input className="input" type="text" placeholder="  Search " />
+      {/* NEW NAVBAR */}
+      <div className="nav2-container">
+        <div className="nav2 h-[60px] flex items-center w-screen justify-between">
+          <div>
+            <img alt="NikeLogo" src={NikeLogo} className="w-20 ml-12 mr-48"></img>
           </div>
-          <div className="heart">
-            <FaHeart />
+          <div className="nav-links flex justify-between w-[400px] text-lg">
+            <button
+              className="py-3 hover:border-black hover:border-b-2"
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              New & Featured
+            </button>
+            <button
+              className="py-3 hover:border-black hover:border-b-2"
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              Men
+            </button>
+            <button
+              className="py-3 hover:border-black hover:border-b-2"
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              Women
+            </button>
+            <button
+              className="py-3 hover:border-black hover:border-b-2"
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              Kids
+            </button>
+            <button
+              className="py-3 hover:border-black hover:border-b-2"
+              onMouseEnter={() => setShowNewMenu(true)}
+              onMouseLeave={() => setShowNewMenu(false)}
+            >
+              Sales
+            </button>
           </div>
-          <div className="shoppingBag">
-            <a href="/checkout">
-              <FaShoppingBag />
-            </a>
+          {/* SEARCH BAR, FAVORITES, BAG */}
+          <div className="nav-right-section flex w-fit items-center mr-12">
+            <div className="search-bar flex items-center relative">
+              <FaSearchDollar className="fa-lg absolute left-2  rounded-full hover:bg-gray-200" />
+              <input
+                className="input text-center bg-gray-100 rounded-full h-9"
+                type="text"
+                placeholder="Search"
+              />
+            </div>
+            <div className="flex items-center">
+              <FaHeart className="ml-8 text-2xl" />
+              <a href="/checkout">
+                <FaShoppingBag className="ml-8 text-2xl" />
+              </a>
+            </div>
           </div>
         </div>
+        {/* HIDDEN DROPDOWN MENU */}
+        {(showNewMenu || showNewDropdown) && (
+          <div className="dropdown-container absolute z-10">
+            <div
+              className="dropdown flex z-11 w-screen justify-center py-10 bg-white"
+              onMouseEnter={() => setShowNewDropdown(true)}
+              onMouseLeave={() => setShowNewDropdown(false)}
+            >
+              <div className="flex flex-col items-start mx-6">
+                <button className="font-semibold">New & Featured</button>
+                <button className="text-gray-500 hover:text-black">New Arrivals</button>
+                <button className="text-gray-500 hover:text-black">New in Running</button>
+                <button className="text-gray-500 hover:text-black">SNKRS Launch Calendar</button>
+                <button className="text-gray-500 hover:text-black">New & Upcoming Drops</button>
+                <button className="text-gray-500 hover:text-black">Valentine's Day Shop</button>
+              </div>
+              <div className="flex flex-col items-start mx-6">
+                <button className="font-semibold">New for Men</button>
+                <button className="text-gray-500 hover:text-black">Shoes</button>
+                <button className="text-gray-500 hover:text-black">Clothing</button>
+                <button className="text-gray-500 hover:text-black">Equipment</button>
+                <button className="text-gray-500 hover:text-black">Shop All New</button>
+              </div>
+              <div className="flex flex-col items-start mx-6">
+                <button className="font-semibold">New For Women</button>
+                <button className="text-gray-500 hover:text-black">Shoes</button>
+                <button className="text-gray-500 hover:text-black">Clothing</button>
+                <button className="text-gray-500 hover:text-black">Equipment</button>
+                <button className="text-gray-500 hover:text-black">Shop All New</button>
+              </div>
+              <div className="flex flex-col items-start mx-6">
+                <button className="font-semibold">New For Kids</button>
+                <button className="text-gray-500 hover:text-black">Boys Shoes</button>
+                <button className="text-gray-500 hover:text-black">Boys Clothing</button>
+                <button className="text-gray-500 hover:text-black">Girls Shoes</button>
+                <button className="text-gray-500 hover:text-black">Girls Clothing</button>
+                <button className="text-gray-500 hover:text-black">Shop All New</button>
+              </div>
+              <div className="flex flex-col items-start mx-6">
+                <button className="font-semibold">Drops</button>
+                <button className="text-gray-500 hover:text-black">New Arrivals</button>
+              </div>
+            </div>
+            <div className="dropdown-bg absolute z-10 h-screen w-screen bg-gray-200 opacity-75 "></div>
+          </div>
+        )}
       </div>
       <HeaderCarousel />
     </div>

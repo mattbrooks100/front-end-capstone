@@ -4,37 +4,41 @@ import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
 import counterAtom from "../couterAtom";
+import sizeState from "../sizeState.jsx";
+import quantityState from "../quantityState.jsx";
 
+const sizeArray = [];
 
 const AddToBag = () => {
-  const [counter, setCounter] = useRecoilState(counterAtom)
-
+  const [counter, setCounter] = useRecoilState(counterAtom);
   const [shoe, setShoe] = useRecoilState(shoeState);
-
-  let [isOpen, setIsOpen] = useState(false);
+  const [sizeSelected, setSizeSelected] = useRecoilState(sizeState);
+  const [quantity, setQuantity] = useRecoilState(quantityState);
+  const [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
   const handleClick = () => {
+    if (sizeSelected.length === 0) {
+      alert("Please select a size.");
+      return;
+    }
+    setIsOpen(true);
     setCounter(counter + 1);
-  
-  }
-  
+    setQuantity(quantity + 1);
+    sizeArray.push(sizeSelected);
+  };
+
   return (
     <div>
-      <div className="relative inset-0 flex items-center" onClick={handleClick}>
+      <div className="relative inset-0 flex items-center">
         <button
-          onClick={openModal}
+          onClick={handleClick}
           className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
         >
           <div>Add To Bag</div>
-          
         </button>
       </div>
 
@@ -64,23 +68,21 @@ const AddToBag = () => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  ></Dialog.Title>
-                  <div className="mt-4">
+                  <div className="flex justify-between">
+                    <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                      Items in Cart
+                    </Dialog.Title>
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black-900 hover:text-black-500 cursor-pointer"
+                      className="inline-flex justify-center rounded-md bg-white text-sm font-medium text-black-900 hover:text-black-500 cursor-pointer"
                       onClick={closeModal}
                     >
                       X
                     </button>
                   </div>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
+                    <div className="text-sm text-gray-500">
                       <div className="Cart" style={{ border: "2px solid black", padding: "18px" }}>
-                        <h1 style={{ fontSize: "25px", font: "bold" }}>Items in Cart</h1>
                         <h2 style={{ fontSize: "20px", font: "bold" }}>
                           Name: {shoe.length && shoe[0].name}
                         </h2>
@@ -90,16 +92,21 @@ const AddToBag = () => {
                         <h4 style={{ fontSize: "20px", font: "bold" }}>
                           Color: {shoe.length && shoe[0].color}
                         </h4>
-                        <h5 style={{ fontSize: "20px", font: "bold" }}>Size: </h5>
-                        <h6 style={{ fontSize: "20px", font: "bold" }}>Quantity: </h6>
+                        <h5 style={{ fontSize: "20px", font: "bold" }}>
+                          Size: {sizeArray.join(", ")}
+                        </h5>
+                        <h6 style={{ fontSize: "20px", font: "bold" }}>Quantity: {quantity}</h6>
                         <img style={{ width: "80px", height: "80px" }} src={Dunks1}></img>
                       </div>
-                    </p>
-                  </div> <br></br>
-                  <div className="flex items-center">
-                   <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
-                      <a href="/checkout" style={{fontSize:'20px'}}> Proceed To Checkout </a>
-                    </button> 
+                    </div>
+                  </div>
+                  <div className="flex">
+                    <a
+                      href="/checkout"
+                      className="flex justify-center bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500"
+                    >
+                      Proceed To Checkout
+                    </a>
                   </div>
 
                   
@@ -113,4 +120,4 @@ const AddToBag = () => {
   );
 };
 
-export default AddToBag; 
+export default AddToBag;

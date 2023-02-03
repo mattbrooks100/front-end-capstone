@@ -103,7 +103,7 @@ export const Header = () => {
                         < FaHeart />
                     </div>
                     <div className='shoppingBag'>
-                        <a href="#">
+                        <a href="/checkout">
                         < FaShoppingBag />
                         </a>
                     </div>

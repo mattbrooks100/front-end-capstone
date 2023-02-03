@@ -23,7 +23,7 @@ app.get("/api/reviews", (req, res) => {
   })
 })
 
-app.post("/api/rviews", (req,res) => {
+app.post("/api/reviews", (req,res) => {
   
 })
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useMemo } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";

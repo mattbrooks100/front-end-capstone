@@ -13,6 +13,7 @@ export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
   const [counter, setCounter] = useRecoilState(counterAtom)
+  const cartData = JSON.parse(localStorage.getItem("cart"));
 
   return (
     <div className="w-full">
@@ -88,7 +89,7 @@ export const Header = () => {
               <div className="flex relative">
                 <FaShoppingBag className="ml-8 text-2xl" />
                 <div className=" flex relative top-0 right-0 ">
-                {counter}
+                {cartData.length}
                 </div>
                </div>
               </a>

@@ -23,8 +23,6 @@ const Summary = (props) => {
   });
 
   const totalPrice = (props) => {
-    // let total = shoe.length && shoe[0].price * shoe.length && shoe[0].quantity + 7
-    // console.log(shoe.length && shoe[0].price);
     let total = `$ ${subtotal + 7}.00`;
     return total;
   };
@@ -35,7 +33,7 @@ const Summary = (props) => {
         <h1 className="text-2xl mb-8">Summary</h1>
       </div>
       <div className="border-b border-gray-200">
-        <button className="flex w-full justify-between" onClick={() => setShowPromo(!showPromo)}>
+        <button className="flex w-full justify-between pb-4" onClick={() => setShowPromo(!showPromo)}>
           <div className="text-xl">Do you have a promo code? </div>
           {showPromo ? (
             <MdOutlineKeyboardArrowUp size={25} />

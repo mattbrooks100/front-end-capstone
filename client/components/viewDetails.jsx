@@ -103,13 +103,13 @@ export const ViewDetails = () => {
                           <li>Style: DD1390-100</li>
                         </ul>
                       </div>
-                      <div className="mt-4 text-lg font-medium leading-6 text-black-900">
+                      <div className="mt-4 mb-4 text-lg font-medium leading-6 text-black-900">
                         Nike Dunk Low
                       </div>
                       <p>
-                        One of the most iconic basketball sneakers created by Nike\, the Dunk
+                        One of the most iconic basketball sneakers created by Nike, the Dunk
                         originally made its debut in 1985. They have become a staple and continue to
-                        be re-released in numerous versions\, colorways and styles today.
+                        be re-released in numerous versions, colorways and styles today.
                       </p>
                     </p>
                   </div>

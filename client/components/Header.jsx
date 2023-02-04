@@ -31,37 +31,37 @@ export const Header = () => {
           <div>
             <img alt="NikeLogo" src={NikeLogo} className="w-20 ml-12 mr-48"></img>
           </div>
-          <div className="nav-links flex justify-between w-[400px] text-lg">
+          <div className="nav-links flex w-[400px] text-lg">
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               New & Featured
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Men
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Women
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Kids
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >

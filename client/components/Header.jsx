@@ -80,7 +80,9 @@ export const Header = () => {
             </div>
             <div> </div>
             <div className="flex items-center">
-              <FiHeart className="ml-8 text-2xl" />
+              <button>
+                <FiHeart className="ml-8 text-2xl" />
+              </button>
               <a href="/checkout">
                 <div className="flex relative ml-8">
                   <BsBag className="text-2xl" />

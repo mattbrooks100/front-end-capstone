@@ -4,22 +4,19 @@ import { FaHeart } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
- import { useRecoilState } from "recoil";
- import counterAtom from "./couterAtom";
+//  import { useRecoilState } from "recoil";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
+import Counter from "./Counter";
 
 export const Header = () => {
-  
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
-  const [counter, setCounter] = useRecoilState(counterAtom)
-  const cartData = JSON.parse(localStorage.getItem("cart"));
 
   return (
     <div className="w-full">
       <div className="top-header-bg flex items-center justify-between h-9 w-screen bg-gray-100">
         <div className="top-header-logos flex">
-          <img src={combinedLogo} className="ml-12"/>
+          <img src={combinedLogo} className="ml-12" />
         </div>
         <div className="top-header-links flex text-xs gap-2 mr-12">
           <button className="pr-2 border-r border-black hover:text-gray-500">Find Store</button>
@@ -82,18 +79,17 @@ export const Header = () => {
                 placeholder="Search"
               />
             </div>
-            <div > </div>
-            <div className="flex items-center"  >
+            <div> </div>
+            <div className="flex items-center">
               <FaHeart className="ml-8 text-2xl" />
-              <a href="/checkout" > 
-              <div className="flex relative">
-                <FaShoppingBag className="ml-8 text-2xl" />
-                <div className=" flex relative top-0 right-0 ">
-                {cartData.length}
+              <a href="/checkout">
+                <div className="flex relative">
+                  <FaShoppingBag className="ml-8 text-2xl" />
+                  <div className=" flex relative top-0 right-0 ">
+                    <Counter />
+                  </div>
                 </div>
-               </div>
               </a>
-               
             </div>
           </div>
         </div>
@@ -142,7 +138,6 @@ export const Header = () => {
             </div>
             <div className="dropdown-bg absolute z-10 h-screen w-screen bg-gray-200 opacity-75 "></div>
           </div>
-
         )}
       </div>
       <HeaderCarousel />

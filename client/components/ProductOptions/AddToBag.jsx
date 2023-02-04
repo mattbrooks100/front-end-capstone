@@ -3,27 +3,21 @@ import { Dialog, Transition } from "@headlessui/react";
 import shoeState from "./shoeState";
 import { useRecoilState } from "recoil";
 import Dunks1 from "/photos/Dunks1.jpg";
-import counterAtom from "../couterAtom";
 import sizeState from "../sizeState.jsx";
 import quantityState from "../quantityState.jsx";
+import cartState from "../cartState";
 
 const sizeArray = [];
 
 const AddToBag = () => {
-  const [counter, setCounter] = useRecoilState(counterAtom);
   const [shoe, setShoe] = useRecoilState(shoeState);
   const [sizeSelected, setSizeSelected] = useRecoilState(sizeState);
   const [quantity, setQuantity] = useRecoilState(quantityState);
   const [isOpen, setIsOpen] = useState(false);
-  let shoeSelected = {};
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useRecoilState(cartState);
 
   function closeModal() {
     setIsOpen(false);
-  }
-
-  const storeCart = () => {
-    localStorage.setItem("cart", JSON.stringify(cart));
   }
   
   const handleClick = () => {
@@ -32,17 +26,17 @@ const AddToBag = () => {
       return;
     }
     setIsOpen(true);
-    setCounter(counter + 1);
     setQuantity(quantity + 1);
     sizeArray.push(sizeSelected);
     
-    shoeSelected = {
+    const shoeSelected = {
       name: shoe[0].name,
       price: shoe[0].price,
       size: sizeSelected,
     };
+    
     setCart([...cart, shoeSelected]);
-    storeCart();
+    console.log(cart);
   };
 
   return (

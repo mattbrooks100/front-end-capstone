@@ -32,8 +32,8 @@ const Summary = (props) => {
       <div>
         <h1 className="text-2xl mb-8">Summary</h1>
       </div>
-      <div className="border-b border-gray-200">
-        <button className="flex w-full justify-between pb-4" onClick={() => setShowPromo(!showPromo)}>
+      <div className="mb-4">
+        <button className="flex w-full justify-between" onClick={() => setShowPromo(!showPromo)}>
           <div className="text-xl">Do you have a promo code? </div>
           {showPromo ? (
             <MdOutlineKeyboardArrowUp size={25} />
@@ -51,7 +51,7 @@ const Summary = (props) => {
       </div>
       <div class="grid grid-cols-2 gap-4 h-fit">
         <h2>Subtotal</h2>
-        <h4> ${subtotal}</h4>
+        <h4> ${subtotal}.00</h4>
         <h2>Estimated Shipping & Handling</h2>
         <h4> $7.00</h4>
         <h2>Estimated Tax</h2>
@@ -63,7 +63,7 @@ const Summary = (props) => {
         Checkout
       </button>
       <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
-        Paypal
+        PayPal
       </button>
       <button className="bg-black text-white w-full mt-4 py-4 rounded-full hover:bg-gray-500">
         $DannyAndrewsBitcoin$

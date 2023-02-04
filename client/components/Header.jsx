@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaShoppingBag } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
+import { BsBag } from "react-icons/bs";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
-//  import { useRecoilState } from "recoil";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
 import Counter from "./Counter";
 
@@ -81,11 +80,11 @@ export const Header = () => {
             </div>
             <div> </div>
             <div className="flex items-center">
-              <FaHeart className="ml-8 text-2xl" />
+              <FiHeart className="ml-8 text-2xl" />
               <a href="/checkout">
-                <div className="flex relative">
-                  <FaShoppingBag className="ml-8 text-2xl" />
-                  <div className=" flex relative top-0 right-0 ">
+                <div className="flex relative ml-8">
+                  <BsBag className="text-2xl" />
+                  <div className="absolute inset-x-2 inset-y-1">
                     <Counter />
                   </div>
                 </div>

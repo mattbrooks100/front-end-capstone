@@ -36,7 +36,6 @@ const AddToBag = () => {
     };
     
     setCart([...cart, shoeSelected]);
-    console.log(cart);
   };
 
   return (

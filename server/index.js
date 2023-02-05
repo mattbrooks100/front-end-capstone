@@ -24,9 +24,14 @@ app.get("/api/reviews", (req, res) => {
 })
 
 app.post("/api/reviews", (req,res) => {
-  sql``
+  let review = req.body; 
+    // let {username, title, body} = review
+    sql`INSERT INTO reviews ${sql(review)} RETURNING *`.then((result) => {
+      res.json(result)
+    })
 })
 
 app.listen(3000, () => {
   console.log("listening on port 3000");
 });
+// (username, title, body) VALUES(${username, title, body})

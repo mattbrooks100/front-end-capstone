@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { FaSearchDollar } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaShoppingBag } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
+import { BsBag } from "react-icons/bs";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
- import { useRecoilState } from "recoil";
- import counterAtom from "./couterAtom";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
+import Counter from "./Counter";
 
 export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
-  const [counter, setCounter] = useRecoilState(counterAtom)
-  
- 
 
   return (
     <div className="w-full">
       <div className="top-header-bg flex items-center justify-between h-9 w-screen bg-gray-100">
         <div className="top-header-logos flex">
-          <img src={combinedLogo} className="ml-12"/>
+          <img src={combinedLogo} className="ml-12" />
         </div>
         <div className="top-header-links flex text-xs gap-2 mr-12">
           <button className="pr-2 border-r border-black hover:text-gray-500">Find Store</button>
@@ -35,37 +31,37 @@ export const Header = () => {
           <div>
             <img alt="NikeLogo" src={NikeLogo} className="w-20 ml-12 mr-48"></img>
           </div>
-          <div className="nav-links flex justify-between w-[400px] text-lg">
+          <div className="nav-links flex w-[400px] text-lg">
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               New & Featured
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Men
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Women
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
               Kids
             </button>
             <button
-              className="py-3 hover:border-black hover:border-b-2"
+              className="grow py-3 hover:border-black hover:border-b-2"
               onMouseEnter={() => setShowNewMenu(true)}
               onMouseLeave={() => setShowNewMenu(false)}
             >
@@ -82,12 +78,18 @@ export const Header = () => {
                 placeholder="Search"
               />
             </div>
-            <div > </div>
-            <div className="flex items-center"  >
-              <FaHeart className="ml-8 text-2xl" />
-              <a href="/checkout" >
-                <FaShoppingBag className="ml-8 text-2xl" />
-               {counter}
+            <div> </div>
+            <div className="flex items-center">
+              <button>
+                <FiHeart className="ml-8 text-2xl" />
+              </button>
+              <a href="/checkout">
+                <div className="flex relative ml-8">
+                  <BsBag className="text-2xl" />
+                  <div className="absolute inset-x-2 inset-y-1">
+                    <Counter />
+                  </div>
+                </div>
               </a>
             </div>
           </div>
@@ -137,7 +139,6 @@ export const Header = () => {
             </div>
             <div className="dropdown-bg absolute z-10 h-screen w-screen bg-gray-200 opacity-75 "></div>
           </div>
-
         )}
       </div>
       <HeaderCarousel />

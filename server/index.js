@@ -24,7 +24,7 @@ app.get("/api/reviews", (req, res) => {
 })
 
 app.post("/api/reviews", (req,res) => {
-  
+  sql``
 })
 
 app.listen(3000, () => {

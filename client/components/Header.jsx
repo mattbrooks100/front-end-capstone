@@ -5,7 +5,7 @@ import { FaShoppingBag } from "react-icons/fa";
 import NikeLogo from "./Logos/NikeLogo.png";
 import HeaderCarousel from "./headercarousel";
  import { useRecoilState } from "recoil";
- import counterAtom from "./couterAtom";
+//  import counterAtom from "./couterAtom";
 import combinedLogo from "./Logos/combined-converse-jordan.png";
 
 

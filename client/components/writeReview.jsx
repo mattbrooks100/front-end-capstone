@@ -3,8 +3,26 @@ import { Dialog, Transition } from '@headlessui/react'
 
 //changed description to actual description on lines 62-64. changed style and shown in lines 85-86
 
-export const WriteReview = () => {
-    let [isOpen, setIsOpen] = useState(false)
+export const WriteReview = (props) => {
+    
+  let [isOpen, setIsOpen] = useState(false)
+  let [body, setBody] = useState("")
+  let [title, setTitle] = useState("")
+  let [user, setUser] = useState("")
+
+  let recordTitle = (event) => {
+    setTitle(event.target.value)
+    console.log(event.target.value)
+  }
+
+  let recordBody = (event) => {
+    setBody(event.target.value)
+    console.log(event.target.value)
+  }
+  
+  let recordUser = (event) => {
+    setUser(event.target.value)
+  }
 
   function closeModal() {
     setIsOpen(false)
@@ -15,10 +33,20 @@ export const WriteReview = () => {
   }
 
   const reviewdb = () => {
+    console.log("hi")
+    const newDate = new Date();
+    const formattedDate = newDate.toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            });
     fetch('/api/reviews', {
         method: 'POST',
-        headers: 'application/json;'
+        body: JSON.stringify({username: user, title: title, body: body, date: formattedDate }),
+        headers: {"Content-Type":"application/json"}
     })
+    .then(res => res.json())
+    .then() // send review back to be displayed
     
   }
 
@@ -29,7 +57,7 @@ export const WriteReview = () => {
           onClick={openModal}
           className="rounded-md bg-white bg-opacity-20 text-sm font-medium text-black cursor-pointer"
         >
-          <u>View Product Details</u>
+          <u>Write a review</u>
         </a>
       </div>
 
@@ -65,43 +93,31 @@ export const WriteReview = () => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    LEGENDARY STYLE DEFINED.
+                    WRITE A REVIEW
                   </Dialog.Title>
-                  <div className="mt-2">
-                    <p className="text-sm text-gray-500"> 
-                    Before cementing its status as a streetwear icon and skateboarding staple, 
-                    the Dunk began its journey on the hardwood as Nike's first-team basketball shoe before cementing its status as a sportswear legend.
-                     This low-top edition of the timeless silhouette features neutral hues of sail and fossil with spicy hits of medium curry.
+                  <form onSubmit={reviewdb}>
+                    <span>Please share your experience.</span>
+                    <div className="mt-2">
+                      <div>
+                        <label htmlFor="body">Review</label>  
+                        <textarea onChange={recordBody} name="body" id="body" rows="5" className='border-black border'>
 
-                    
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Benefits</h4>
-                    <div className="mt-2 text-sm text-black-700">
-                      <ul className='leading-8 list-disc ml-6'>
-                        <li>The stitched overlays on the upper add heritage style, durability and support.</li>
-                        <li>Originally designed for performance hoops, the Nike Air cushioning adds lightweight, all-day comfort.</li>
-                        <li>The low-cut silhouette adds a clean, streamlined look.</li>
-                        <li>The padded collar feels soft and comfortable.</li>
-                      </ul>
+                        </textarea>
+                      </div>  
+                      <div>
+                      <label htmlFor="title">Review Title</label>
+                      <input onChange={recordTitle} type="text" name='title' placeholder='title' className='border-black border'/>
+                      </div>
+                      <div>
+                        <label htmlFor="username">Username</label>
+                        <input onChange={recordUser} type="text" name='username' placeholder='username' className='border border-black'/>
+                      </div>
                     </div>
-
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Product Details</h4>
-                    <div className="mt-2 text-sm text-black-700">
-                      <ul className='leading-8 list-disc ml-6'>
-                        <li>Foam midsole</li>
-                        <li>Perforations on the toe</li>
-                        <li>Rubber sole</li>
-                        <li>Shown: Tan/White</li>
-                        <li>Style: DD1390-100</li>
-                      </ul>
-                    </div>
-                    <h4 className="text-lg font-medium leading-6 text-black-900">Nike Dunk Low</h4>
-                    <p>
-                    One of the most iconic basketball sneakers created by Nike\, the Dunk originally made its debut in 1985. They have become a staple and continue to be re-released in numerous versions\, colorways and styles today.
-                    </p>
-                    </p>
-                  </div>
-                  
-                  <div className="mt-4">
+                    <button type='submit'>
+                      Submit
+                    </button>
+                  </form>
+                    <div className="mt-4">
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md bg-white px-4 py-2 text-sm font-medium text-black-900 hover:text-black-500 cursor-pointer"

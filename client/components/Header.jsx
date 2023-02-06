@@ -13,8 +13,9 @@ import combinedLogo from "./Logos/combined-converse-jordan.png";
 export const Header = () => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [showNewDropdown, setShowNewDropdown] = useState(false);
-  const [counter, setCounter] = useRecoilState(counterAtom)
-  const cartData = JSON.parse(localStorage.setItem.getItem("cart"));
+  const [counter, setCounter] = useRecoilState(counterAtom);
+
+  const cartData = JSON.parse(localStorage.getItem("cart"));
 
   return (
     <div className="w-full">

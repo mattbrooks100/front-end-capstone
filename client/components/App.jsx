@@ -64,7 +64,7 @@ const App = () => {
             <div>
               <Header />
             </div>
-            <div className="flex gap-16 mt-8 px-8 justify-center">
+            <div className="flex gap-16 mt-8 px-8 justify-center min-h-[calc(100vh-676px)]">
               <CheckOut />
               <div>
                 <Summary />

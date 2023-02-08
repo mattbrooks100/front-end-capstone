@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve",
-    "build": "vite build"
+    "build": "vite build",
+    "webp": "simple-webp-converter"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
@@ -12,6 +13,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
+    "simple-webp-converter": "^1.0.3",
     "tailwindcss": "^3.2.4",
     "vite": "^3.0.9"
   },

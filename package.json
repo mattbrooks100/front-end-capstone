@@ -22,6 +22,7 @@
     "react-router-dom": "^6.8.0",
     "recoil": "^0.7.6",
     "recoil-persist": "^4.2.0",
+    "redis": "^4.6.4",
     "slick-carousel": "^1.8.1"
   }
 }

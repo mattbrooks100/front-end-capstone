@@ -23,16 +23,16 @@ let redisClient;
 async function getShoes(req, res) {
   try {
     console.log("Checking for cached data...");
-    const shoeData = await redisClient.get("shoes");
+    const shoeData = await redisClient.get("Medium Curry");
     if (shoeData) {
       console.log("Cached data found.")
       res.send(shoeData);
     } else {
       console.log("No cached data. Querying database...");
-      const shoeData = await sql`SELECT * FROM shoes`;
+      const shoeData = await sql`SELECT * FROM shoes WHERE name = 'Nike Dunk Low ''Medium Curry'''`;
       res.send(JSON.stringify(shoeData));
       console.log("Saving data in cache.")
-      redisClient.set("shoes", JSON.stringify(shoeData));
+      redisClient.set("Medium Curry", JSON.stringify(shoeData));
     }
   } catch (err) {
     console.error(err);
@@ -40,7 +40,7 @@ async function getShoes(req, res) {
 }
 // END REDIS IMPLEMENTATION
 
-app.get("/api/shoes", getShoes);
+app.get("/api/shoes/medium_curry", getShoes);
 
 app.get("/api/reviews", (req, res) => {
   sql`SELECT * FROM reviews`.then((review) => {

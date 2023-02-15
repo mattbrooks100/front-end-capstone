@@ -19,12 +19,12 @@ const App = () => {
   const [reviews, setReview] = useRecoilState(reviewState);
 
   useEffect(() => {
-    fetch("/api/shoes", {
+    fetch("/api/shoes/medium_curry", {
       mode: "cors",
     })
       .then((res) => res.json())
       .then((shoe) => {
-        setShoe(shoe);
+        setShoe(shoe[0]);
       });
     fetch("/api/reviews", {})
       .then((res) => res.json())

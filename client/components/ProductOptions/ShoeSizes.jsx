@@ -5,6 +5,7 @@ import Size from "./Size";
 
 const ShoeSizes = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
+  console.log(shoe.sizes);
 
   return (
     <div className="grid grid-cols-2 gap-1 justify-between">
@@ -12,7 +13,7 @@ const ShoeSizes = () => {
       <a href="#" className="flex justify-end font-[500] tracking-[0.02em] text-gray-500">
         Size Guide
       </a>
-      {shoe.length && shoe[0].sizes.map((size) => <Size key={size} size={size} />)}
+      {shoe.sizes && shoe.sizes.map((size) => <Size key={size} size={size} />)}
     </div>
   );
 };

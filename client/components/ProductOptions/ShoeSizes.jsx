@@ -5,7 +5,6 @@ import Size from "./Size";
 
 const ShoeSizes = () => {
   const [shoe, setShoe] = useRecoilState(shoeState);
-  console.log(shoe.sizes);
 
   return (
     <div className="grid grid-cols-2 gap-1 justify-between">
